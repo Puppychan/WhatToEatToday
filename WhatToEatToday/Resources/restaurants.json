@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "name": "Yeebo",
+    "description": "Our extensive menu of over 300 dishes is the quintessence of traditional Chinese cuisine. The menu offers a wide range of dishes from nutritious Hotpot to Dimsum, and signature roasted dishes such as Pecking duck, roasted goose, top-of-the-range abalone, and cheese baked lobster just to name a few.",
+    "tel": "028 5412 1313",
+    "address": "109 Tôn Dật Tiên",
+    "openHour": "7AM – 2PM & 5PM – 10PM",
+    "categories": [
+      "Dim Sum",
+      "Hot Pot"
+    ],
+    "isFavorite": false,
+    "hasGone": false,
+    "isInCustomList": false,
+    "foodList": [
+      {
+        "id": 1,
+        "name": "Shrimp Dumplings - Har Gow",
+        "description": "Shrimp, bamboo shoots, sesame oil, cornstarch, soy sauce, sugar, xiaoxing wine, ginger, pepper, salt, dumpling flour",
+        "category": "Dim Sum",
+        "price": 92000,
+        "image": "Yeebo-Shrimp Dumplings"
+      },
+      {
+        "id": 2,
+        "name": "Shrimp Dumplings - Siu Mai",
+        "description": "scallops, pork, starch, peanut oil, sesame oil, shrimp, mushrooms, ginger, scallions, oyster sauce, salt, sugar, pepper, carrots, dumpling wrappers",
+        "category": "Dim Sum",
+        "price": 92000,
+        "image": "Yeebo-Siumai"
+      },
+      {
+        "id": 3,
+        "name": "Yuan Yang Hot Pot",
+        "description": "Double-flavor hot pot: one-half of the pot is filled with spicy broth, the other half is filled with non-spicy broth",
+        "category": "Hot Pot",
+        "price": 340000,
+        "image": "Yeebo-mutton brisket hot pot"
+      },
+      {
+        "id": 4,
+        "name": "USA Beef",
+        "description": "Using with hot pot",
+        "category": "Hot Pot",
+        "price": 440000,
+        "image": "Yeebo-usa beef"
+      },
+      {
+        "id": 5,
+        "name": "Tube Bone & Nashi Pear Hotpot",
+        "description": "A hotpot cooked from pork broth, jujube, Asian pears and snow mushroom as main ingredients that give the dish a natural, fruity sweetness & a very distinct flavor.",
+        "category": "Hot Pot",
+        "price": 590000,
+        "image": "Yeebo- tube bone nashi pear hotpot"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Coco Ichibanya",
+    "description": "'CURRY HOUSE CoCo ICHIBANYA',known as 'CoCoICHI', is a chain restaurant specializing in Japanese-style curry rice. \n Many people enjoy making their very own CoCoICHI curry by customizing the rice portion, spice level, and optional toppings coming in nearly 40 varieties. Please enjoy our curry, which is very popular with the Japanese people!",
+    "tel": "028 7309 9926",
+    "address": "13 Lý Tự Trọng",
+    "openHour": "10AM – 9PM",
+    "categories": [
+      "Japanese",
+      "Curry"
+    ],
+    "isFavorite": false,
+    "hasGone": false,
+    "isInCustomList": false,
+    "foodList": [
+      {
+        "id": 1,
+        "name": "Shrimp Dumplings - Har Gow",
+        "description": "Shrimp, bamboo shoots, sesame oil, cornstarch, soy sauce, sugar, xiaoxing wine, ginger, pepper, salt, dumpling flour",
+        "category": "Curry",
+        "price": 92000,
+        "image": "Yeebo-Shrimp Dumplings"
+      },
+      {
+        "id": 2,
+        "name": "Shrimp Dumplings - Siu Mai",
+        "description": "scallops, pork, starch, peanut oil, sesame oil, shrimp, mushrooms, ginger, scallions, oyster sauce, salt, sugar, pepper, carrots, dumpling wrappers",
+        "category": "Curry",
+        "price": 92000,
+        "image": "Yeebo-Siumai"
+      },
+      {
+        "id": 3,
+        "name": "Yuan Yang Hot Pot",
+        "description": "Double-flavor hot pot: one-half of the pot is filled with spicy broth, the other half is filled with non-spicy broth",
+        "category": "Hot Pot",
+        "price": 340000,
+        "image": "Yeebo-mutton brisket hot pot"
+      },
+      {
+        "id": 4,
+        "name": "USA Beef",
+        "description": "Using with hot pot",
+        "category": "Hot Pot",
+        "price": 440000,
+        "image": "Yeebo-usa beef"
+      },
+      {
+        "id": 5,
+        "name": "Tube Bone & Nashi Pear Hotpot",
+        "description": "A hotpot cooked from pork broth, jujube, Asian pears and snow mushroom as main ingredients that give the dish a natural, fruity sweetness & a very distinct flavor.",
+        "category": "Hot Pot",
+        "price": 590000,
+        "image": "Yeebo- tube bone nashi pear hotpot"
+      }
+    ]
+  }
+]
