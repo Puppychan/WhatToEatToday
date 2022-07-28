@@ -19,34 +19,36 @@ struct RestaurantDetailView: View {
 
                 // MARK: - Restaurant Info
                 VStack {
-                    // Image
+                    // MARK: restaurant cover image
                     Image("\(rest.name)-bck")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                    VStack(alignment: .leading, spacing: 10) {
-                        // Restaurant Info
+                    VStack(alignment: .leading, spacing: 13) {
+                        // MARK: restaurant name
                         Text(rest.name)
                             .font(.largeTitle)
                             .bold()
-                            .foregroundColor(Color("TitleRestaurantColor"))
+                            .foregroundColor(Color("RestDetailTitleColor"))
 
-                        HStack {
+                        // MARK: restaurant address
+                        HStack(spacing: 3) {
                             Image(systemName: "mappin.and.ellipse")
-                                .foregroundStyle(Color("IconRestaurantColor"))
+                                .foregroundStyle(Color("RestDetailIconColor"))
                                 .symbolRenderingMode(.hierarchical)
-                                .font(.headline)
-                                .symbolVariant(.fill)
+                                .font(.title3)
                             Text(rest.address)
-                                .foregroundColor(Color("RestaurantAddressColor"))
-                                .font(.body)
+                                .foregroundColor(Color("RestDetailAddColor"))
+                                .font(.headline)
                         }
                         
-
+                        
+                        // MARK: restaurant description
+                        // need add read more
                         Text(rest.description)
                             .lineSpacing(5)
                             .lineLimit(3)
-                            .font(.callout)
-                            .foregroundColor(Color("RestaurantDescriptionColor"))
+                            .font(.body)
+                            .foregroundColor(Color("RestDetailDescColor"))
                     }
                         .padding()
                 }
@@ -65,7 +67,7 @@ struct RestaurantDetailView: View {
                                 .padding()
                                 .multilineTextAlignment(.center)
                                 .background(ArrowShape()
-                                    .fill(Color("TitleCategoryBckColor"))
+                                    .fill(Color("CategoryTitleBckColor"))
                                     .shadow(radius: 10))
                                 .padding(.top, index == 0 ? 30 : 40)
 

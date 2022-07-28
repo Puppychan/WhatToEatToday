@@ -30,12 +30,12 @@ struct FoodCardView: View {
                     Text(food.description)
                         .lineLimit(1)
                         .font(.body)
-                        .foregroundColor(Color("CardDescriptionColor"))
+                        .foregroundColor(Color("FoodCardDescriptionColor"))
 
                     // Price
                     Text("\(food.price)")
                         .font(.subheadline)
-                        .foregroundColor(Color("CardPriceColor"))
+                        .foregroundColor(Color("FoodCardPriceColor"))
                         .bold()
                 }
                 .padding()

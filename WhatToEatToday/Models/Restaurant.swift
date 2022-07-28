@@ -16,16 +16,25 @@ struct Restaurant : Decodable, Identifiable {
     var openHour: String = "7AM – 2PM & 5PM – 10PM"
     var categories: [String] = ["Dim Sum", "Hot Pot"]
 
-    var isFavorite: Bool = false
+    var rating: Double = 4
     var hasGone: Bool = false
     var isInCustomList: Bool = false
     
 //    var priceRange: Double = 0.0
     
     var foodList = [Food]()
-    
-    // ignore when convert json to object
-//    @NotCoded var priceRange: Double
+
+    func isPopular() -> Bool {
+        return rating > 3.5
+    }
+    func findPriceRange() -> String {
+        let minPrice = foodList.map{$0.price}.min()
+        let maxPrice = foodList.map{$0.price}.max()
+        if let newMin = minPrice, let newMax = maxPrice {
+            return "\(String(newMin / 1000))k ~ \(String(newMax / 1000))k VND"
+        }
+        return "0d ~ 0d"
+    }
 
 }
 struct Food : Decodable, Identifiable {

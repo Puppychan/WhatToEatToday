@@ -31,7 +31,6 @@ struct HomeView: View {
                 VStack(alignment: .leading) {
                     Text("All Restaurants")
                         .font(.largeTitle)
-                        .foregroundColor(Color("TitleColor"))
                         .bold()
                     ScrollView {
                         VStack(spacing: 40) {

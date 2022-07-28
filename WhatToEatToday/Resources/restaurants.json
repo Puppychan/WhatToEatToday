@@ -10,7 +10,7 @@
       "Dim Sum",
       "Hot Pot"
     ],
-    "isFavorite": false,
+    "rating": 3,
     "hasGone": false,
     "isInCustomList": false,
     "foodList": [
@@ -67,7 +67,7 @@
       "Japanese",
       "Curry"
     ],
-    "isFavorite": false,
+    "rating": 4,
     "hasGone": false,
     "isInCustomList": false,
     "foodList": [
