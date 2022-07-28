@@ -58,6 +58,16 @@ class RestaurantModel : ObservableObject {
         currentRestaurant = restaurants[currentRestaurantIndex]
     }
     
+    // check if has popular restaurant
+    func hasPopularRestaurant() -> Bool {
+        for rest in restaurants {
+            if (rest.isPopular()) {
+                return true
+            }
+        }
+        return false
+    }
+    
     // MARK: - Food
     // create category list
     

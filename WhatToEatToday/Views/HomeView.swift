@@ -27,13 +27,49 @@ struct HomeView: View {
 
         NavigationView {
             
-            VStack {
-                VStack(alignment: .leading) {
-                    Text("All Restaurants")
-                        .font(.largeTitle)
-                        .bold()
-                    ScrollView {
-                        VStack(spacing: 40) {
+            ScrollView {
+                VStack {
+                    
+                    // MARK: - Display popular restaurants
+                    VStack(alignment: .leading) {
+                        Text("Popular Restaurants")
+                            .font(.largeTitle)
+                            .bold()
+                        
+                        if (model.hasPopularRestaurant()) {
+                            ScrollView(.horizontal) {
+                                HStack(spacing: 10) {
+                                    ForEach(model.restaurants.indices, id: \.self) { index in
+                                        if (model.restaurants[index].isPopular()) {
+                                            NavigationLink(
+                                                destination: {
+                                                
+                                                },
+                                                label: {
+                                                    RestaurantCardView(rest: model.restaurants[index])
+                                                })
+                                            if (index != model.restaurants.count - 1) {
+                                                Divider()
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else {
+                            Text("No Popular Restaurant Now")
+                        }
+                    }
+                    .padding()
+                    
+                    Divider()
+                    
+                    // MARK: - All Restaurants Display
+                    VStack(alignment: .leading) {
+                        Text("All Restaurants")
+                            .font(.largeTitle)
+                            .bold()
+                        VStack(spacing: 40 ) {
                             ForEach(model.restaurants.indices, id: \.self) { index in
                                 NavigationLink(destination: {
                                     RestaurantDetailView(rest: model.restaurants[index])
@@ -48,6 +84,7 @@ struct HomeView: View {
                             }
                         }
                     }
+                    
                 }
                 .frame(
                       minWidth: 0,
@@ -55,7 +92,7 @@ struct HomeView: View {
                       minHeight: 0,
                       maxHeight: .infinity,
                       alignment: .center
-                )
+            )
             }
 
         }

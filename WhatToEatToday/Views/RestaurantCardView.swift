@@ -25,6 +25,7 @@ struct RestaurantCardView: View {
             // text
             HStack {
                 VStack(alignment: .leading, spacing: 0) {
+                    Spacer()
                     // MARK: restaurant name
                     Text(rest.name)
                         .font(.title2)
