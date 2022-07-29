@@ -9,8 +9,10 @@ import SwiftUI
 
 struct RestaurantCardView: View {
     var rest: Restaurant
+    var cardWidth: CGFloat
+    var cardHeight: CGFloat
+    var displayType: String
     var body: some View {
-        let cardWidth = CGFloat(357), cardHeight = CGFloat(340)
         // Card content
         VStack(alignment: .center, spacing: 5) {
 
@@ -29,31 +31,32 @@ struct RestaurantCardView: View {
                     
                     // MARK: restaurant name
                     Text(rest.name)
-                        .font(.title2)
+                        .font(displayType == "all" ? .title2 : .title3)
                         .bold()
                         .lineLimit(1)
                         .foregroundColor(Color("RestCardTitleColor"))
                     HStack(spacing: 9) {
                         
                         // MARK: restaurant rating
-                        HStack(spacing: 4) {
-                            Image(systemName: "star.fill")
-                                .foregroundColor(.yellow)
-                                .font(.headline)
-                            Text("\(String(rest.rating))")
-                                .foregroundColor(Color("RestCardCaptColor"))
-                        }
+                        RatingView(rest: rest)
 
                         Text("•")
                             .font(.headline)
                             .bold()
                             .foregroundColor(.black)
-
-                        
-                        // MARK: restaurant category
-                        Text(rest.categories[0])
-                            .foregroundColor(Color("RestCardCaptColor"))
-                            .italic()
+                        if displayType == "all" {
+                            
+                            // MARK: restaurant category
+                            Text(rest.categories[0])
+                                .foregroundColor(Color("RestCardCaptColor"))
+                                .italic()
+                        }
+                        else {
+                            // MARK: price
+                            Text(rest.findPriceRange())
+                                .font(.subheadline)
+                                .foregroundColor(Color("RestCardPriceColor"))
+                        }
                     }
                         .font(.subheadline)
                 }
@@ -62,20 +65,24 @@ struct RestaurantCardView: View {
                 VStack(spacing: 0) {
                     Spacer()
                     
-                    // MARK: restaurant price range
-                    Label(rest.findPriceRange(), systemImage: "dollarsign.circle")
-                        .font(.subheadline)
-                        .foregroundColor(Color("RestCardPriceColor"))
+                    if displayType == "all" {
+                        // MARK: restaurant price range
+                        Label(rest.findPriceRange(), systemImage: "dollarsign.circle")
+                            .font(.subheadline)
+                            .foregroundColor(Color("RestCardPriceColor"))
+                    }
 
                 }
 
             }
             // MARK: divider
-            Divider()
-                .frame(height: 1.7)
-                .overlay(Color("RestCardBorderColor"))
-                .cornerRadius(10)
-                .padding(.bottom)
+            if displayType == "all" {
+                Divider()
+                    .frame(height: 1.7)
+                    .overlay(Color("RestCardBorderColor"))
+                    .cornerRadius(10)
+                    .padding(.bottom)                
+            }
         }
             .frame(width: cardWidth)
 
@@ -85,6 +92,6 @@ struct RestaurantCardView: View {
 
 struct RestaurantCardView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantCardView(rest: Restaurant())
+        RestaurantCardView(rest: Restaurant(), cardWidth: 340, cardHeight: 357, displayType: "all")
     }
 }

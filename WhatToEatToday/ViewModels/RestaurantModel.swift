@@ -10,21 +10,58 @@
 //https://stackoverflow.com/questions/37517829/get-distinct-elements-in-an-array-by-object-property
 
 import Foundation
+import CoreLocation
 
-class RestaurantModel : ObservableObject {
+class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var restaurants = [Restaurant]()
+    
+    var locationManager = CLLocationManager()
+    @Published var authorizationState = CLAuthorizationStatus.notDetermined
+    @Published var userLocation: CLLocation?
     
     
     // Current restaurant
     @Published var currentRestaurant: Restaurant?
     var currentRestaurantIndex = 0
     
-    init() {
+    override init() {
 //        for index in 0...9 {
 //            restaurants.append(Restaurant())
 //            restaurants[index].foodList.append(Food())
 //        }
+        
+        // Init method of NSObject
+        super.init()
         getLocalData()
+        
+        // Set content model as the delegate of the location manager
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+    }
+    
+    // MARK: - Deal with location
+    func requestGeolocationPermission() {
+        // remember to open Info -> Target -> Info -> Below Bundle Version String -> Click add -> Type "Privacy - Location When In Use Usage Description" with value "Please allow us to access your location"
+        // Request permission from the user
+        locationManager.requestWhenInUseAuthorization()
+    }
+    
+    // MARK: - Location Manager Delegate Methods
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        
+        // Update the authorizationState property
+        authorizationState = locationManager.authorizationStatus
+        
+        if locationManager.authorizationStatus == .authorizedAlways ||
+            locationManager.authorizationStatus == .authorizedWhenInUse {
+            // We have permission
+            // Start geolocating the user, after we get permission
+            locationManager.startUpdatingLocation()
+        }
+        else if locationManager.authorizationStatus == .denied {
+            print("You dont have permission to access")
+        }
     }
     
     // MARK: - Deal with Data

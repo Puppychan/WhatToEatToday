@@ -11,6 +11,7 @@ import SwiftUI
 
 struct RestaurantDetailView: View {
     var rest: Restaurant
+    @State var isFoodDetailShowing = false
     @EnvironmentObject var model: RestaurantModel
     var body: some View {
         ScrollView {
@@ -40,6 +41,9 @@ struct RestaurantDetailView: View {
                                 .foregroundColor(Color("RestDetailAddColor"))
                                 .font(.headline)
                         }
+                        
+                        // MARK: restaurant rating
+                        RatingView(rest: rest)
                         
                         
                         // MARK: restaurant description
@@ -75,7 +79,16 @@ struct RestaurantDetailView: View {
                         // MARK: food display following its category
                         LazyVStack(alignment: .leading, spacing: 17) {
                             ForEach(rest.foodList) { food in
-                                FoodCardView(food: food)
+                                Button(action: {
+                                    isFoodDetailShowing = true
+                                }, label: {
+                                    FoodCardView(food: food)
+                                })
+                                .sheet(isPresented: $isFoodDetailShowing, content: {
+                                    FoodDetailView(food: food)
+                                })
+                                // for user style not button auto style
+                                .buttonStyle(PlainButtonStyle())
                             }
                         }
                             .padding()
