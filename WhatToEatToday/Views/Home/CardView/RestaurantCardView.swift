@@ -14,6 +14,7 @@ struct RestaurantCardView: View {
     var displayType: String
     var body: some View {
         // Card content
+        // add display gone or not gone
         VStack(alignment: .center, spacing: 5) {
 
             // MARK: cover image
@@ -44,6 +45,7 @@ struct RestaurantCardView: View {
                             .font(.headline)
                             .bold()
                             .foregroundColor(.black)
+                        
                         if displayType == "all" {
                             
                             // MARK: restaurant category
@@ -64,9 +66,8 @@ struct RestaurantCardView: View {
                 Spacer()
                 VStack(spacing: 0) {
                     Spacer()
-                    
+                    // MARK: restaurant price range
                     if displayType == "all" {
-                        // MARK: restaurant price range
                         Label(rest.findPriceRange(), systemImage: "dollarsign.circle")
                             .font(.subheadline)
                             .foregroundColor(Color("RestCardPriceColor"))

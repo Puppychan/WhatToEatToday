@@ -6,16 +6,19 @@
 //
 // ref: https://stackoverflow.com/questions/59158476/how-to-have-text-in-shapes-in-swiftui
 
+
 import SwiftUI
 
 
 struct RestaurantDetailView: View {
     var rest: Restaurant
-    @State var isFoodDetailShowing = false
+    @State var imageHeight : CGFloat = 0
+//    @State var isFoodDetailShowing = false
+    @State var imageScale = 1.0
     @EnvironmentObject var model: RestaurantModel
     var body: some View {
         ScrollView {
-
+            // add display gone or not gone
             LazyVStack(alignment: .leading, spacing: 0) {
 
                 // MARK: - Restaurant Info
@@ -24,6 +27,11 @@ struct RestaurantDetailView: View {
                     Image("\(rest.name)-bck")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
+                    // for changing scale of image when scroll
+                        .scaleEffect(imageScale)
+                        .animation(.default.delay(1.3), value: imageScale)
+                        .clipped()
+                    
                     VStack(alignment: .leading, spacing: 13) {
                         // MARK: restaurant name
                         Text(rest.name)
@@ -31,7 +39,7 @@ struct RestaurantDetailView: View {
                             .bold()
                             .foregroundColor(Color("RestDetailTitleColor"))
 
-                        // MARK: restaurant address
+                        // MARK: restaurant address -> display map
                         HStack(spacing: 3) {
                             Image(systemName: "mappin.and.ellipse")
                                 .foregroundStyle(Color("RestDetailIconColor"))
@@ -45,7 +53,6 @@ struct RestaurantDetailView: View {
                             
                             // MARK: restaurant rating
                             RatingView(rest: rest, fontSize: .title3)
-                            
                             Spacer()
                         }
                         
@@ -63,47 +70,26 @@ struct RestaurantDetailView: View {
 
 
                 // MARK: - Food list with category
-                LazyVStack(alignment: .leading) {
-                    let categories = model.findAllCategories(rest.id)
-                    ForEach(categories.indices, id: \.self) { index in
-                        // MARK: category name
-                        Text(categories[index].uppercased())
-                            .bold()
-                            .foregroundColor(.white)
-                            .font(.title2)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .padding()
-                            .multilineTextAlignment(.center)
-                            .background(ArrowShape()
-                                .fill(Color("CategoryTitleBckColor"))
-                                .shadow(radius: 10))
-                            .padding(.top, index == 0 ? 30 : 40)
-
-
-                        // MARK: food display following its category
-                        LazyVStack(alignment: .leading, spacing: 17) {
-                            ForEach(rest.foodList) { food in
-                                Button(action: {
-                                    self.isFoodDetailShowing = true
-                                    model.navigateFood(food.id, rest.id)
-                                }, label: {
-                                    FoodCardView(food: food)
-                                })
-                                .sheet(isPresented: $isFoodDetailShowing, content: {
-                                    FoodDetailView(food: model.currentFood ?? Food(), rest: rest)
-                                })
-                                // for user style not button auto style
-                                .buttonStyle(PlainButtonStyle())
-                            }
-                        }
-                            .padding()
-
-                    }
-
-                }
+                FoodListView(rest: rest)
 
             }
         }
+        .simultaneousGesture(
+           DragGesture()
+            .onChanged { value in
+              if value.translation.height > 0 {
+                 print("Scroll down")
+//                  imageScale += 0.1
+                  imageScale = value.translation.height
+                  
+              }
+               else {
+                   imageScale = 1.0
+               }
+           }
+
+        )
+        .ignoresSafeArea()
     }
 }
 
@@ -123,3 +109,5 @@ struct FoodView_Previews: PreviewProvider {
 //                        .lineLimit(3)//optional
 //                        .animation(.easeOut)//optional
 //                        .padding(.horizontal, 24)//optional
+
+

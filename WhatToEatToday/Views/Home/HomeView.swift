@@ -32,7 +32,9 @@ struct HomeView: View {
 
             ScrollView {
                 VStack {
-
+                    // MARK: - filter category list
+                    
+                    // MARK: - national pick
                     
                     // MARK: - Display popular restaurants
                     if searchQuery.isEmpty {

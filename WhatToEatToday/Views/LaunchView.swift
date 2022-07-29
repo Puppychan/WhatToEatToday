@@ -14,51 +14,20 @@ struct LaunchView: View {
     // Customise your SplashScreen here
     var body: some View {
         if model.authorizationState == .notDetermined {
-            VStack {
-                Spacer()
-
-                Text("Eat What Today???")
-                    .font(Font.custom("Avenir", size: 26))
-                    .foregroundColor(.white)
-                GifView(name: "eatwhat")
-                    .frame(width: 250, height: 200)
-
-                Button(action: {
-                    model.requestGeolocationPermission()
-                }, label: {
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(.black)
-                                .frame(height: 48)
-                                .cornerRadius(10)
-
-                            Text("Open Settings")
-                                .bold()
-                                .foregroundColor(.white)
-                                .padding()
-                        }
-                            .padding()
-                    })
-
-                Spacer()
-            }
-                .opacity(opacity)
-                .onAppear {
-                withAnimation(.easeIn(duration: 1.2)) {
-                    self.opacity = 1.00
-                }
-            }
-                .background(Color("DenyLocationBckColor"))
-
+            LaunchContentView()
         }
         else if model.authorizationState == .authorizedAlways || model.authorizationState == .authorizedWhenInUse {
+
             HomeView()
+
         }
         else {
-            LocationDenyView()
+            LaunchContentView(openSetting: true)
+            
         }
 
     }
+    
 }
 
 struct LaunchView_Previews: PreviewProvider {
