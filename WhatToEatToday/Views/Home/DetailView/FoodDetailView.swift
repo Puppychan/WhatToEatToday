@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FoodDetailView: View {
     var food : Food
+    var rest: Restaurant
+    @EnvironmentObject var model: RestaurantModel
     var body: some View {
         // MARK: food information
         VStack(spacing: 0) {
@@ -47,12 +49,9 @@ struct FoodDetailView: View {
         .frame(minHeight: 110)
         .cornerRadius(15)
         .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.17), radius: 10, x: -5, y: 10)
+        .onAppear {
+            model.navigateFood(food.id, rest.id)
+        }
 
-    }
-}
-
-struct FoodDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        FoodDetailView(food: Food())
     }
 }

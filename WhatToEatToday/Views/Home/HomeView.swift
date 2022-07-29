@@ -33,6 +33,7 @@ struct HomeView: View {
             ScrollView {
                 VStack {
 
+                    
                     // MARK: - Display popular restaurants
                     if searchQuery.isEmpty {
                         PopularRestaurantsView()
@@ -45,7 +46,7 @@ struct HomeView: View {
                             .font(.largeTitle)
                             .bold()
                             .padding(.top, searchQuery.isEmpty ? 0 : 10)
-                        VStack(spacing: 40) {
+                        VStack(spacing: searchQuery.isEmpty ? 45 : 30) {
                             // MARK: display 1 restaurant
                             ForEach(filteredRestaurant) { item in
                                 NavigationLink(destination: {

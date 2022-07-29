@@ -40,10 +40,14 @@ struct RestaurantDetailView: View {
                             Text(rest.address)
                                 .foregroundColor(Color("RestDetailAddColor"))
                                 .font(.headline)
+                            
+                            Spacer()
+                            
+                            // MARK: restaurant rating
+                            RatingView(rest: rest, fontSize: .title3)
+                            
+                            Spacer()
                         }
-                        
-                        // MARK: restaurant rating
-                        RatingView(rest: rest)
                         
                         
                         // MARK: restaurant description
@@ -80,12 +84,13 @@ struct RestaurantDetailView: View {
                         LazyVStack(alignment: .leading, spacing: 17) {
                             ForEach(rest.foodList) { food in
                                 Button(action: {
-                                    isFoodDetailShowing = true
+                                    self.isFoodDetailShowing = true
+                                    model.navigateFood(food.id, rest.id)
                                 }, label: {
                                     FoodCardView(food: food)
                                 })
                                 .sheet(isPresented: $isFoodDetailShowing, content: {
-                                    FoodDetailView(food: food)
+                                    FoodDetailView(food: model.currentFood ?? Food(), rest: rest)
                                 })
                                 // for user style not button auto style
                                 .buttonStyle(PlainButtonStyle())

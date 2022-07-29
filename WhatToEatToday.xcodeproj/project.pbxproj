@@ -16,7 +16,6 @@
 		3D8371242893A2B90067C946 /* eatwhat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3D8371232893A2B90067C946 /* eatwhat.gif */; };
 		3D8371262893A7D30067C946 /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8371252893A7D30067C946 /* FoodDetailView.swift */; };
 		3D83712A2893B8580067C946 /* PopularRestaurantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8371292893B8580067C946 /* PopularRestaurantsView.swift */; };
-		3D83712C2893B9010067C946 /* AllRestaurantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83712B2893B9010067C946 /* AllRestaurantsView.swift */; };
 		3D83712E2893B9590067C946 /* RestaurantSearchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83712D2893B9590067C946 /* RestaurantSearchCardView.swift */; };
 		3D8371312893B9CC0067C946 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8371302893B9CC0067C946 /* RatingView.swift */; };
 		3D85B3DC288FB0C8001BF2AF /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85B3DB288FB0C8001BF2AF /* RestaurantModel.swift */; };
@@ -43,7 +42,6 @@
 		3D8371232893A2B90067C946 /* eatwhat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = eatwhat.gif; path = Images/Gif/eatwhat.gif; sourceTree = SOURCE_ROOT; };
 		3D8371252893A7D30067C946 /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
 		3D8371292893B8580067C946 /* PopularRestaurantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularRestaurantsView.swift; sourceTree = "<group>"; };
-		3D83712B2893B9010067C946 /* AllRestaurantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRestaurantsView.swift; sourceTree = "<group>"; };
 		3D83712D2893B9590067C946 /* RestaurantSearchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchCardView.swift; sourceTree = "<group>"; };
 		3D8371302893B9CC0067C946 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		3D85B3DB288FB0C8001BF2AF /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 				3D83712F2893B9BB0067C946 /* SmallDetailView */,
 				3D837113289377710067C946 /* RestaurantMapView.swift */,
 				3D8371292893B8580067C946 /* PopularRestaurantsView.swift */,
-				3D83712B2893B9010067C946 /* AllRestaurantsView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -136,6 +133,7 @@
 			children = (
 				3D85B3E3288FF57D001BF2AF /* RestaurantDetailView.swift */,
 				3D8371252893A7D30067C946 /* FoodDetailView.swift */,
+				3D837118289389830067C946 /* GifView.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -184,7 +182,6 @@
 			children = (
 				3D837115289383630067C946 /* Home */,
 				3D837116289383B30067C946 /* LocationDenyView.swift */,
-				3D837118289389830067C946 /* GifView.swift */,
 				3D83711E289397340067C946 /* LaunchView.swift */,
 			);
 			path = Views;
@@ -267,7 +264,6 @@
 				3DC2FC972886E18E003750D3 /* WhatToEatTodayApp.swift in Sources */,
 				3D85B3EE2892AADD001BF2AF /* Shapes.swift in Sources */,
 				3D8371312893B9CC0067C946 /* RatingView.swift in Sources */,
-				3D83712C2893B9010067C946 /* AllRestaurantsView.swift in Sources */,
 				3D83711F289397340067C946 /* LaunchView.swift in Sources */,
 				3DC2FCA62886E1E3003750D3 /* HomeView.swift in Sources */,
 				3D85B3DC288FB0C8001BF2AF /* RestaurantModel.swift in Sources */,

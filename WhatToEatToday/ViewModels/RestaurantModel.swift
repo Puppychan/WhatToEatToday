@@ -14,10 +14,13 @@ import CoreLocation
 
 class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var restaurants = [Restaurant]()
-    
     var locationManager = CLLocationManager()
     @Published var authorizationState = CLAuthorizationStatus.notDetermined
     @Published var userLocation: CLLocation?
+    
+    // Current Food
+    @Published var currentFood: Food?
+    var currentFoodIndex = 0
     
     
     // Current restaurant
@@ -124,14 +127,21 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
         
     }
     
-    // filter food with category
-    func filterCategory(forId: Int, category: String) -> [Food] {
-        let restaurantIndex = restaurants.firstIndex(where: { $0.id == forId}) ?? 0
-        return restaurants[restaurantIndex].foodList.filter { fd in
-            fd.category == category
-        }
+    // MARK: Food Navigation Method
+    func navigateFood(_ foodId: Int, _ restId: Int) {
+        let restaurantIndex = restaurants.firstIndex(where: { $0.id == restId}) ?? 0
+        // find the index for the restaurant id
+        currentFoodIndex = restaurants[restaurantIndex].foodList.firstIndex(where: {
+            $0.id == foodId
+        }) ?? 0
+        
+        // set the current restaurant
+        currentFood = restaurants[restaurantIndex].foodList[currentFoodIndex]
     }
+    
 }
+
+
 
 
 extension Array {
