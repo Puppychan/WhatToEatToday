@@ -56,31 +56,29 @@ struct RestaurantDetailView: View {
 
                 // MARK: - Food list with category
                 LazyVStack(alignment: .leading) {
-                    ForEach(rest.categories.indices, id: \.self) { index in
-                        if (model.filterCategory(forId: rest.id, category: rest.categories[index]).count != 0) {
-                            // MARK: category name
-                            Text(rest.categories[index].uppercased())
-                                .bold()
-                                .foregroundColor(.white)
-                                .font(.title2)
-                                .fixedSize(horizontal: false, vertical: true)
-                                .padding()
-                                .multilineTextAlignment(.center)
-                                .background(ArrowShape()
-                                    .fill(Color("CategoryTitleBckColor"))
-                                    .shadow(radius: 10))
-                                .padding(.top, index == 0 ? 30 : 40)
+                    let categories = model.findAllCategories(rest.id)
+                    ForEach(categories.indices, id: \.self) { index in
+                        // MARK: category name
+                        Text(categories[index].uppercased())
+                            .bold()
+                            .foregroundColor(.white)
+                            .font(.title2)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding()
+                            .multilineTextAlignment(.center)
+                            .background(ArrowShape()
+                                .fill(Color("CategoryTitleBckColor"))
+                                .shadow(radius: 10))
+                            .padding(.top, index == 0 ? 30 : 40)
 
 
-                            // MARK: food display following its category
-                            LazyVStack(alignment: .leading, spacing: 17) {
-                                ForEach(model.filterCategory(forId: rest.id, category: rest.categories[index])) { food in
-                                    FoodCardView(food: food)
-                                }
+                        // MARK: food display following its category
+                        LazyVStack(alignment: .leading, spacing: 17) {
+                            ForEach(rest.foodList) { food in
+                                FoodCardView(food: food)
                             }
-                                .padding()
-
                         }
+                            .padding()
 
                     }
 

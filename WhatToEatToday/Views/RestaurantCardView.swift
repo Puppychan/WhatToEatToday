@@ -26,6 +26,7 @@ struct RestaurantCardView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 0) {
                     Spacer()
+                    
                     // MARK: restaurant name
                     Text(rest.name)
                         .font(.title2)
@@ -33,6 +34,7 @@ struct RestaurantCardView: View {
                         .lineLimit(1)
                         .foregroundColor(Color("RestCardTitleColor"))
                     HStack(spacing: 9) {
+                        
                         // MARK: restaurant rating
                         HStack(spacing: 4) {
                             Image(systemName: "star.fill")
@@ -47,6 +49,7 @@ struct RestaurantCardView: View {
                             .bold()
                             .foregroundColor(.black)
 
+                        
                         // MARK: restaurant category
                         Text(rest.categories[0])
                             .foregroundColor(Color("RestCardCaptColor"))
@@ -58,6 +61,7 @@ struct RestaurantCardView: View {
                 Spacer()
                 VStack(spacing: 0) {
                     Spacer()
+                    
                     // MARK: restaurant price range
                     Label(rest.findPriceRange(), systemImage: "dollarsign.circle")
                         .font(.subheadline)
@@ -66,8 +70,9 @@ struct RestaurantCardView: View {
                 }
 
             }
+            // MARK: divider
             Divider()
-                .frame(height: 2)
+                .frame(height: 1.7)
                 .overlay(Color("RestCardBorderColor"))
                 .cornerRadius(10)
                 .padding(.bottom)

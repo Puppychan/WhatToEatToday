@@ -36,6 +36,7 @@ struct HomeView: View {
                             .font(.largeTitle)
                             .bold()
                         
+                        // MARK: if 
                         if (model.hasPopularRestaurant()) {
                             ScrollView(.horizontal) {
                                 HStack(spacing: 10) {
@@ -43,7 +44,10 @@ struct HomeView: View {
                                         if (model.restaurants[index].isPopular()) {
                                             NavigationLink(
                                                 destination: {
-                                                
+                                                    RestaurantDetailView(rest: model.restaurants[index])
+                                                        .onAppear() {
+                                                            model.navigateRestaurant(model.restaurants[index].id)
+                                                        }
                                                 },
                                                 label: {
                                                     RestaurantCardView(rest: model.restaurants[index])
@@ -70,6 +74,7 @@ struct HomeView: View {
                             .font(.largeTitle)
                             .bold()
                         VStack(spacing: 40 ) {
+                            // MARK: display 1 restaurant
                             ForEach(model.restaurants.indices, id: \.self) { index in
                                 NavigationLink(destination: {
                                     RestaurantDetailView(rest: model.restaurants[index])

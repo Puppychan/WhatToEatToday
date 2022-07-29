@@ -5,12 +5,15 @@
 //  Created by Nhung Tran on 26/07/2022.
 //
 
-//ref: https://stackoverflow.com/questions/24534229/swift-modifying-arrays-inside-dictionaries
+//ref:
+//https://stackoverflow.com/questions/24534229/swift-modifying-arrays-inside-dictionaries
+//https://stackoverflow.com/questions/37517829/get-distinct-elements-in-an-array-by-object-property
 
 import Foundation
 
 class RestaurantModel : ObservableObject {
     @Published var restaurants = [Restaurant]()
+    
     
     // Current restaurant
     @Published var currentRestaurant: Restaurant?
@@ -70,6 +73,19 @@ class RestaurantModel : ObservableObject {
     
     // MARK: - Food
     // create category list
+    func findAllCategories(_ restId: Int) -> [String] {
+        let restaurantIndex = restaurants.firstIndex(where: { $0.id == restId}) ?? 0
+        var categorySet = Set<String>() // unique list to keep track of unique string
+        var categoryArr = [String]()
+        for food in restaurants[restaurantIndex].foodList {
+            if !categorySet.contains(food.category) {
+                categorySet.insert(food.category)
+                categoryArr.append(food.category)
+            }
+        }
+        return categoryArr
+        
+    }
     
     // filter food with category
     func filterCategory(forId: Int, category: String) -> [Food] {
@@ -77,5 +93,23 @@ class RestaurantModel : ObservableObject {
         return restaurants[restaurantIndex].foodList.filter { fd in
             fd.category == category
         }
+    }
+}
+
+
+extension Array {
+    func unique<T:Hashable>(by: ((Element) -> (T)))  -> [Element] {
+        //the unique list kept in a Set for fast retrieval
+        var set = Set<T>()
+        //keeping the unique list of elements but ordered
+        var arrayOrdered = [Element]()
+        for value in self {
+            if !set.contains(by(value)) {
+                set.insert(by(value))
+                arrayOrdered.append(value)
+            }
+        }
+
+        return arrayOrdered
     }
 }
