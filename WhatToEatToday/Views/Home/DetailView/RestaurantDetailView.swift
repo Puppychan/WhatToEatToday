@@ -74,21 +74,21 @@ struct RestaurantDetailView: View {
 
             }
         }
-        .simultaneousGesture(
-           DragGesture()
-            .onChanged { value in
-              if value.translation.height > 0 {
-                 print("Scroll down")
-//                  imageScale += 0.1
-                  imageScale = value.translation.height
-                  
-              }
-               else {
-                   imageScale = 1.0
-               }
-           }
-
-        )
+//        .simultaneousGesture(
+//           DragGesture()
+//            .onChanged { value in
+//              if value.translation.height > 0 {
+//                 print("Scroll down")
+////                  imageScale += 0.1
+//                  imageScale = value.translation.height
+//
+//              }
+//               else {
+//                   imageScale = 1.0
+//               }
+//           }
+//
+//        )
         .ignoresSafeArea()
     }
 }
