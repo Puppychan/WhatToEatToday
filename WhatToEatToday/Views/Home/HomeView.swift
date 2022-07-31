@@ -32,61 +32,94 @@ struct HomeView: View {
 
             ScrollView {
                 VStack {
-                    // MARK: - filter category list
-                    ScrollView(.horizontal) {
-                        HStack(spacing: 40) {
-                            ForEach(SideAppModels.restaurantCategories, id: \.self) { cate in
-                                CategoryItemView(name: cate)
+
+                    // MARK: - national pick
+
+                    if searchQuery.isEmpty {
+                        // MARK: - filter category list
+                        ScrollView(.horizontal) {
+                            HStack(spacing: 40) {
+                                ForEach(SideAppModels.restaurantCategories, id: \.self) { cate in
+                                    CategoryItemView(name: cate)
+
+                                }
+                                    .frame(height: 90)
 
                             }
-                            .frame(height: 90)
-                            
+                                .padding()
                         }
-                        .padding()
-                    }
-                    .background(Color("CategoryFilterBckColor"))
-                    
-                    // MARK: - national pick
-                    
-                    // MARK: - Display popular restaurants
-                    if searchQuery.isEmpty {
+                            .background(Color("CategoryFilterBckColor"))
+
+                        // MARK: - Display popular restaurants
                         PopularRestaurantsView()
                         Divider()
                     }
 
                     // MARK: - Display restaurant when searching and display all restaurants
                     VStack(alignment: .leading) {
-                        Text("All Restaurants")
-                            .font(.largeTitle)
-                            .bold()
-                            .padding(.top, searchQuery.isEmpty ? 0 : 10)
-                        VStack(spacing: searchQuery.isEmpty ? 45 : 30) {
-                            // MARK: display 1 restaurant
-                            ForEach(filteredSearchRestaurant) { item in
-                                RestaurantLinkView(
-                                    destinationView: AnyView(RestaurantDetailView(rest: item)),
-                                    labelView: AnyView(RestaurantCardView(rest: item, cardWidth: 340, cardHeight: 357, displayType: "all")),
-                                    navigateMethod: {model.navigateRestaurant(item.id)})
-
+                        // if search found or user searches nothing
+                        if filteredSearchRestaurant.count != 0 {
+                            Text("All Restaurants")
+                                .font(.largeTitle)
+                                .bold()
+                                .padding(.top, searchQuery.isEmpty ? 0 : 10)
+                            VStack(spacing: searchQuery.isEmpty ? 45 : 30) {
+                                // MARK: display 1 restaurant
+                                ForEach(filteredSearchRestaurant) { item in
+                                    // if user does not use search feature
+                                    if searchQuery.isEmpty {
+                                        RestaurantLinkView(
+                                            destinationView: AnyView(RestaurantDetailView(rest: item)),
+                                            labelView: AnyView(RestaurantCardView(rest: item, cardWidth: 340, cardHeight: 357, displayType: "all")),
+                                            navigateMethod: { model.navigateRestaurant(item.id) })
+                                    } else {
+                                        // if user uses search feature and search found
+                                        RestaurantLinkView(
+                                            destinationView: AnyView(RestaurantDetailView(rest: item)),
+                                            // display label view if the user is searching or not
+                                            labelView: AnyView(RestaurantSearchCardView(rest: item)
+                                                    .frame(width: 340)),
+                                            navigateMethod: { model.navigateRestaurant(item.id) })
+                                    }
+                                }
                             }
-                        }
-                        // placement helps always display search bar when scroll
-                        .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search Restaurants By Name") {
-                            ForEach(filteredSearchRestaurant) { rest in
-                                Text("Are you looking for \(rest.name)").searchCompletion(rest.name)
-                            }
+                        } else {
+                            // if search not found
+                            Spacer()
+                            NotFoundView(message: "Not Found _\(searchQuery)_ Restaurant")
+                                .padding()
+                            Spacer()
                         }
                     }
 
                 }
-                    .frame(
+                // add frame
+                .frame(
                     minWidth: 0,
                     maxWidth: .infinity,
                     minHeight: 0,
                     maxHeight: .infinity,
                     alignment: .center
                 )
+                // placement helps always display search bar when scroll
+                .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search Restaurants By Name") {
+                    // suggestions for user when typing
+                    ForEach(filteredSearchRestaurant) { rest in
+                        HStack(spacing: 4) {
+                            Image(systemName: "magnifyingglass")
+                                .padding(.trailing, 10)
+                            Text("Are you looking for")
+                                .foregroundColor(.black)
+                            Text(rest.name)
+                                .foregroundColor(Color("RestDetailTitleColor"))
+                                .bold()
+                            
+                        }
+                            .searchCompletion(rest.name)
+                    }
+                }
             }
+                .navigationTitle("EAT TIME!!")
         }
 
     }

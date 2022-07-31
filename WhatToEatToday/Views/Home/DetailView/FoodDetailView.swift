@@ -55,3 +55,10 @@ struct FoodDetailView: View {
 
     }
 }
+struct FoodDetailView_Previews: PreviewProvider {
+    static let model = RestaurantModel()
+    static var previews: some View {
+        FoodDetailView(food: model.restaurants[0].foodList[0], rest: model.restaurants[0])
+            .environmentObject(RestaurantModel())
+    }
+}

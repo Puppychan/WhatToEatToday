@@ -58,9 +58,3 @@ struct FoodCardView: View {
         
     }
 }
-//struct FoodPreview : PreviewProvider {
-//    static var previews: some View {
-//        FoodCardView(food: Fd())
-//    }
-//}
-

@@ -16,11 +16,12 @@ struct PopularRestaurantsView: View {
                 .bold()
                 .padding()
             
-            // MARK:
+            // MARK: display list of popular restaurants horizontally
             if (model.hasPopularRestaurant()) {
                 ScrollView(.horizontal) {
                     HStack(spacing: 10) {
                         ForEach(model.restaurants.indices, id: \.self) { index in
+                            // check if restaurant is popular -> display
                             if (model.restaurants[index].isPopular()) {
                                 RestaurantLinkView(
                                     destinationView: AnyView(RestaurantDetailView(rest: model.restaurants[index])),
@@ -36,8 +37,9 @@ struct PopularRestaurantsView: View {
                 }
             }
             else {
-                Text("No Popular Restaurant Now")
+                NotFoundView(message: "No Popular Restaurants Now")
             }
         }
+
     }
 }
