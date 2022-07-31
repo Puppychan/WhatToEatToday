@@ -8,10 +8,11 @@
 
 import SwiftUI
 
-// Remove back text on navigation bar title
+// MARK: Remove "back" text on navigation bar title
 extension UINavigationController {
     // Remove back button text
     open override func viewWillLayoutSubviews() {
         navigationBar.topItem?.backButtonDisplayMode = .minimal
     }
 }
+

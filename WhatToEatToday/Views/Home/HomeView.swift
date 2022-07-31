@@ -33,6 +33,18 @@ struct HomeView: View {
             ScrollView {
                 VStack {
                     // MARK: - filter category list
+                    ScrollView(.horizontal) {
+                        HStack(spacing: 40) {
+                            ForEach(SideAppModels.restaurantCategories, id: \.self) { cate in
+                                CategoryItemView(name: cate)
+
+                            }
+                            .frame(height: 90)
+                            
+                        }
+                        .padding()
+                    }
+                    .background(Color("CategoryFilterBckColor"))
                     
                     // MARK: - national pick
                     
@@ -50,26 +62,20 @@ struct HomeView: View {
                             .padding(.top, searchQuery.isEmpty ? 0 : 10)
                         VStack(spacing: searchQuery.isEmpty ? 45 : 30) {
                             // MARK: display 1 restaurant
-                            ForEach(filteredRestaurant) { item in
-                                NavigationLink(destination: {
-                                    RestaurantDetailView(rest: item)
-                                        .onAppear() {
-                                        model.navigateRestaurant(item.id)
-                                    }
-                                }, label: {
-                                        // MARK: restaurant basic card
-                                        if (searchQuery.isEmpty) {
-                                            RestaurantCardView(rest: item, cardWidth: 340, cardHeight: 357, displayType: "all")
-                                        }
-                                        else {
-                                            RestaurantSearchCardView(rest: item)
-                                                .frame(width: 340)
-                                        }
-                                    })
+                            ForEach(filteredSearchRestaurant) { item in
+                                RestaurantLinkView(
+                                    destinationView: AnyView(RestaurantDetailView(rest: item)),
+                                    labelView: AnyView(RestaurantCardView(rest: item, cardWidth: 340, cardHeight: 357, displayType: "all")),
+                                    navigateMethod: {model.navigateRestaurant(item.id)})
 
                             }
                         }
-                            .searchable(text: $searchQuery, prompt: "Search Restaurants By Name")
+                        // placement helps always display search bar when scroll
+                        .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search Restaurants By Name") {
+                            ForEach(filteredSearchRestaurant) { rest in
+                                Text("Are you looking for \(rest.name)").searchCompletion(rest.name)
+                            }
+                        }
                     }
 
                 }
@@ -84,7 +90,7 @@ struct HomeView: View {
         }
 
     }
-    var filteredRestaurant: [Restaurant] {
+    var filteredSearchRestaurant: [Restaurant] {
         // search function
         if searchQuery.isEmpty {
             return model.restaurants

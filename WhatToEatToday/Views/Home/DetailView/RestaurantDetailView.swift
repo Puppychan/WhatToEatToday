@@ -10,46 +10,6 @@
 
 import SwiftUI
 
-//struct GeometryGetter: View {
-//    var rest: Restaurant
-//    @Binding var imageScale: CGFloat
-//    var body: some View {
-//        GeometryReader { geo in
-//            ZStack {
-//
-//                if geo.frame(in: .global).minY <= 0 {
-//                    // scroll down outside the screen
-//                    Image("\(rest.name)-bck")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fill)
-//                        .offset(y: geo.frame(in: .global).minY/9)
-//                        .clipped()
-//
-//                }
-//                else {
-//                    Image("\(rest.name)-bck")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fill)
-//                        .frame(width: geo.size.width, height: geo.size.height)
-//                        .scaleEffect(imageScale) // change scale of image
-//                        .animation(.default.delay(1.3), value: imageScale)
-//                        .clipped()
-////                                    .offset(y: -geo.frame(in: .global).minY)
-//                }
-//            }
-//        }
-//        .frame(minHeight: 500)
-//    }
-//
-//    func makeView(geo: GeometryProxy) -> some View {
-//        DispatchQueue.main.async {
-//                    self.rest = geo.frame(in: .global)
-//                }
-//
-//                return Rectangle().fill(Color.clear)
-//    }
-//}
-
 struct RestaurantDetailView: View {
     var rest: Restaurant
     @State var imageHeight: CGFloat = 0
@@ -72,6 +32,7 @@ struct RestaurantDetailView: View {
                                 Image("\(rest.name)-bck")
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
+                                    // move image up
                                     .offset(y: geo.frame(in: .global).minY/9)
                                     .clipped()
                                 
@@ -82,9 +43,10 @@ struct RestaurantDetailView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .scaleEffect(1 + geo.frame(in: .global).minY / 500) // change scale of image
-                                    .animation(.default.delay(1.3), value: imageScale)
+                                    .animation(.easeInOut.delay(2), value: imageScale)
                                     .clipped()
-                                                .offset(y: -geo.frame(in: .global).minY)
+                                    // move image down
+                                    .offset(y: -geo.frame(in: .global).minY)
                             }
                         }
 

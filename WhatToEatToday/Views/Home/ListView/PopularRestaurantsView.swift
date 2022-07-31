@@ -14,6 +14,7 @@ struct PopularRestaurantsView: View {
             Text("Popular")
                 .font(.title2)
                 .bold()
+                .padding()
             
             // MARK:
             if (model.hasPopularRestaurant()) {
@@ -21,16 +22,10 @@ struct PopularRestaurantsView: View {
                     HStack(spacing: 10) {
                         ForEach(model.restaurants.indices, id: \.self) { index in
                             if (model.restaurants[index].isPopular()) {
-                                NavigationLink(
-                                    destination: {
-                                        RestaurantDetailView(rest: model.restaurants[index])
-                                            .onAppear() {
-                                                model.navigateRestaurant(model.restaurants[index].id)
-                                            }
-                                    },
-                                    label: {
-                                        RestaurantCardView(rest: model.restaurants[index], cardWidth: 250, cardHeight: 180, displayType: "popular")
-                                    })
+                                RestaurantLinkView(
+                                    destinationView: AnyView(RestaurantDetailView(rest: model.restaurants[index])),
+                                   labelView: AnyView(RestaurantCardView(rest: model.restaurants[index], cardWidth: 250, cardHeight: 180, displayType: "popular")),
+                                    navigateMethod: {model.navigateRestaurant(model.restaurants[index].id)})
                                 .padding()
                                 if (index != model.restaurants.count - 1) {
                                     Divider()
@@ -44,12 +39,5 @@ struct PopularRestaurantsView: View {
                 Text("No Popular Restaurant Now")
             }
         }
-        .padding()
-    }
-}
-
-struct PopularRestaurantsView_Previews: PreviewProvider {
-    static var previews: some View {
-        PopularRestaurantsView()
     }
 }
