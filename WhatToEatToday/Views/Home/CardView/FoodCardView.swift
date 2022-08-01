@@ -9,8 +9,10 @@ import SwiftUI
 
 struct FoodCardView: View {
     var food: Food
+    var rest: Restaurant
     var body: some View {
         ZStack {
+            // what if no image??
             //MARK: container
             Rectangle()
                 .foregroundColor(.white)
@@ -42,10 +44,10 @@ struct FoodCardView: View {
                 Spacer()
                 
                 // image
-                Image(food.image)
+                Image("\(rest.name)-\(food.name)")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 140)
+                    .frame(width: 140, height: 130)
                     .clipped()
             }
             

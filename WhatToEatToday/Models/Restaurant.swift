@@ -43,7 +43,6 @@ struct Food : Decodable, Identifiable {
     var description: String = ""
     var category: String = "Dim Sum"
     var price: Int = 84_000
-    var image: String = ""
 }
 
 struct Fd : Identifiable {

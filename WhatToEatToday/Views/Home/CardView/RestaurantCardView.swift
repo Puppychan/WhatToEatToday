@@ -22,6 +22,7 @@ struct RestaurantCardView: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: cardWidth, height: cardHeight)
+//                .aspectRatio(CGSize(width: cardWidth, height: cardHeight), contentMode: .fill)
                 .cornerRadius(20)
                 .clipped()
 
@@ -85,8 +86,7 @@ struct RestaurantCardView: View {
                     .padding(.bottom)                
             }
         }
-            .frame(width: cardWidth)
-
+        .frame(width: cardWidth)
 
     }
 }

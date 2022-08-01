@@ -11,6 +11,7 @@
 import SwiftUI
 
 struct RestaurantDetailView: View {
+
     var rest: Restaurant
     @State var imageHeight: CGFloat = 0
 //    @State var isFoodDetailShowing = false
@@ -33,7 +34,7 @@ struct RestaurantDetailView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     // move image up
-                                    .offset(y: geo.frame(in: .global).minY/9)
+                                    .offset(y: geo.frame(in: .global).minY / 9)
                                     .clipped()
                                 
                             }
@@ -49,9 +50,11 @@ struct RestaurantDetailView: View {
                                     .offset(y: -geo.frame(in: .global).minY)
                             }
                         }
+                        // for fixing the text stand on the image bug
+                        .frame(height: 600)
 
                     }
-                    .frame(minHeight: 500)
+                    .frame(height: 603)
 
 
 

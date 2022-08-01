@@ -11,6 +11,7 @@ struct RatingView: View {
     var rest: Restaurant
     var iconFontSize = Font.headline
     var fontSize = Font.headline
+    var displayFull = false
     var body: some View {
         HStack(spacing: 4) {
             Image(systemName: "star.fill")

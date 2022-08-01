@@ -15,7 +15,7 @@ struct FoodDetailView: View {
         // MARK: food information
         VStack(spacing: 0) {
             // image
-            Image(food.image)
+            Image("\(rest.name)-\(food.name)")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 400)

@@ -16,7 +16,7 @@ struct RestaurantSearchCardView: View {
                 .foregroundColor(.white)
 
             // MARK: restaurant information
-            HStack(spacing: 0) {
+            HStack(spacing: 3) {
 
                 // image
                 Image("\(rest.name)-bck")
@@ -27,12 +27,27 @@ struct RestaurantSearchCardView: View {
                 Spacer()
                 
                 VStack(alignment: .leading) {
+                    Spacer()
+                    // MARK: name of the restaurants
                     Text(rest.name)
                         .font(.title3)
                         .bold()
                         .lineLimit(1)
                         .foregroundColor(Color("RestCardTitleColor"))
+                    
+                    // MARK: some food of the restaurants
+                    HStack {
+                        Text("\(rest.foodList[0].name), \(rest.foodList[1].name)")
+                            .lineLimit(1)
+                            .font(.subheadline)
+                            .foregroundStyle(Color("RestDetailAddColor"))
+                    }
+                    
+                    // MARK: rating of the restaurant and distance
+                    // add distance later
                     RatingView(rest: rest)
+                    
+                    Spacer()
                 }
                 Spacer()
             }
@@ -43,11 +58,5 @@ struct RestaurantSearchCardView: View {
         .frame(height: 130)
         .cornerRadius(15)
         .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.17), radius: 10, x: -5, y: 10)
-    }
-}
-
-struct RestaurantSearchCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        RestaurantSearchCardView(rest: Restaurant())
     }
 }

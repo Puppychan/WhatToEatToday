@@ -19,40 +19,35 @@
         "name": "Shrimp Dumplings - Har Gow",
         "description": "Shrimp, bamboo shoots, sesame oil, cornstarch, soy sauce, sugar, xiaoxing wine, ginger, pepper, salt, dumpling flour",
         "category": "Dim Sum",
-        "price": 92000,
-        "image": "Yeebo-Shrimp Dumplings"
+        "price": 92000
       },
       {
         "id": 2,
-        "name": "Shrimp Dumplings - Siu Mai",
+        "name": "Siu Mai",
         "description": "scallops, pork, starch, peanut oil, sesame oil, shrimp, mushrooms, ginger, scallions, oyster sauce, salt, sugar, pepper, carrots, dumpling wrappers",
         "category": "Dim Sum",
-        "price": 92000,
-        "image": "Yeebo-Siumai"
+        "price": 92000
       },
       {
         "id": 3,
         "name": "Yuan Yang Hot Pot",
         "description": "Double-flavor hot pot: one-half of the pot is filled with spicy broth, the other half is filled with non-spicy broth",
         "category": "Hot Pot",
-        "price": 340000,
-        "image": "Yeebo-mutton brisket hot pot"
+        "price": 340000
       },
       {
         "id": 4,
         "name": "USA Beef",
         "description": "Using with hot pot",
         "category": "Hot Pot",
-        "price": 440000,
-        "image": "Yeebo-usa beef"
+        "price": 440000
       },
       {
         "id": 5,
         "name": "Tube Bone & Nashi Pear Hotpot",
-        "description": "A hotpot cooked from pork broth, jujube, Asian pears and snow mushroom as main ingredients that give the dish a natural, fruity sweetness & a very distinct flavor.",
+        "description": "Pork broth, Jujube, Asian pears, Snow mushroom",
         "category": "Hot Pot",
-        "price": 590000,
-        "image": "Yeebo- tube bone nashi pear hotpot"
+        "price": 590000
       }
     ]
   },
@@ -73,43 +68,45 @@
     "foodList": [
       {
         "id": 1,
-        "name": "Shrimp Dumplings - Har Gow",
-        "description": "Shrimp, bamboo shoots, sesame oil, cornstarch, soy sauce, sugar, xiaoxing wine, ginger, pepper, salt, dumpling flour",
-        "category": "Curry",
-        "price": 92000,
-        "image": "Yeebo-Shrimp Dumplings"
+        "name": "Chicken Cutlet Curry",
+        "description": "House Vermont Curry (medium hot), Cooked rice, Onion, Potato, Carrot, Chicken Cutlet (Japanese Chicken Schnitzel), fukujinzuke kaze (including Cucumber, Eggplant, Lotus root, Sword beans, Turnip, Shiso (perilla), Ginger)",
+        "category": "Meat Curry",
+        "price": 110000
       },
       {
         "id": 2,
-        "name": "Shrimp Dumplings - Siu Mai",
-        "description": "scallops, pork, starch, peanut oil, sesame oil, shrimp, mushrooms, ginger, scallions, oyster sauce, salt, sugar, pepper, carrots, dumpling wrappers",
-        "category": "Curry",
-        "price": 92000,
-        "image": "Yeebo-Siumai"
+        "name": "Pork Cutlet Curry",
+        "description": "Pork chops, Carrot, Onion, Potato, Eggs, Black pepper, Curry mix, All-Purpose Flour, Salt, Panko (Japanese-style breadcrumb), Water",
+        "category": "Meat Curry",
+        "price": 110000
       },
       {
         "id": 3,
-        "name": "Yuan Yang Hot Pot",
-        "description": "Double-flavor hot pot: one-half of the pot is filled with spicy broth, the other half is filled with non-spicy broth",
-        "category": "Hot Pot",
-        "price": 340000,
-        "image": "Yeebo-mutton brisket hot pot"
+        "name": "Beef Curry",
+        "description": "Beef (chuck roast), onions, potatoes, carrots, Mushrooms, Garlic, ginger, Wine, Beef stock/broth, tomato paste, Japanese curry powder, Japanese curry roux, bay leaf, grated apple, milk, Worcestershire sauce",
+        "category": "Meat Curry",
+        "price": 120000
       },
       {
         "id": 4,
-        "name": "USA Beef",
-        "description": "Using with hot pot",
-        "category": "Hot Pot",
-        "price": 440000,
-        "image": "Yeebo-usa beef"
+        "name": "OM Pork Cutlet Curry",
+        "description": " olive oil, butter, cornstarch, water, Pork chops, Carrot, Onion, Potato, Eggs, Black pepper, Curry mix, All-Purpose Flour, Salt, Panko (Japanese-style breadcrumb)",
+        "category": "Omelette Curry",
+        "price": 133000
       },
       {
         "id": 5,
-        "name": "Tube Bone & Nashi Pear Hotpot",
-        "description": "A hotpot cooked from pork broth, jujube, Asian pears and snow mushroom as main ingredients that give the dish a natural, fruity sweetness & a very distinct flavor.",
-        "category": "Hot Pot",
-        "price": 590000,
-        "image": "Yeebo- tube bone nashi pear hotpot"
+        "name": "OM Fried Chicken Curry",
+        "description": "olive oil, butter, cornstarch, water, House Vermont Curry (medium hot), Cooked rice, Onion, Potato, Carrot, Chicken Cutlet (Japanese Chicken Schnitzel), fukujinzuke kaze (including Cucumber, Eggplant, Lotus root, Sword beans, Turnip, Shiso (perilla), Ginger)",
+        "category": "Omelette Curry",
+        "price": 133000
+      },
+      {
+        "id": 6,
+        "name": "OM Fried Shrimp Curry",
+        "description": "olive oil, butter, cornstarch, water, House Vermont Curry (medium hot), Cooked rice, Onion, Potato, Carrot, Shrimp, fukujinzuke kaze (including Cucumber, Eggplant, Lotus root, Sword beans, Turnip, Shiso (perilla), Ginger)",
+        "category": "Omelette Curry",
+        "price": 133000
       }
     ]
   },

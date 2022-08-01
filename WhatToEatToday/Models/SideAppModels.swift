@@ -8,5 +8,5 @@
 import Foundation
 
 struct SideAppModels {
-    static let restaurantCategories = ["Milk Tea", "Pizza", "Vietnam", "Chinese", "Japanese", "Curry", "Fast Food", "Healthy", "Thai"]
+    static let restaurantCategories = ["Milk Tea", "Pizza", "Vietnam", "Chinese", "Japanese", "Curry", "Fast Food", "Healthy", "Thai", "Korean"]
 }

@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    init() {
+        // for styling navigation bar
+        let navBarAppearance = UINavigationBarAppearance()
+//        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBackground]
+//        navBarAppearance.largeTitleTextAttributes =
+        navBarAppearance.backgroundColor = UIColor(Color("RestDetailTitleColor"))
+        
+    }
     func logoImage(rest: Restaurant) {
 //        model.restaurants[index]
         ZStack {
@@ -70,7 +78,7 @@ struct HomeView: View {
                                     if searchQuery.isEmpty {
                                         RestaurantLinkView(
                                             destinationView: AnyView(RestaurantDetailView(rest: item)),
-                                            labelView: AnyView(RestaurantCardView(rest: item, cardWidth: 340, cardHeight: 357, displayType: "all")),
+                                            labelView: AnyView(RestaurantCardView(rest: item, cardWidth: UIScreen.main.bounds.width - 30, cardHeight: 357, displayType: "all")),
                                             navigateMethod: { model.navigateRestaurant(item.id) })
                                     } else {
                                         // if user uses search feature and search found
@@ -78,7 +86,7 @@ struct HomeView: View {
                                             destinationView: AnyView(RestaurantDetailView(rest: item)),
                                             // display label view if the user is searching or not
                                             labelView: AnyView(RestaurantSearchCardView(rest: item)
-                                                    .frame(width: 340)),
+                                                    .frame(width: UIScreen.main.bounds.width - 30)),
                                             navigateMethod: { model.navigateRestaurant(item.id) })
                                     }
                                 }

@@ -30,14 +30,14 @@ struct FoodListView: View {
 
 
                 // MARK: food display following its category
-                LazyVStack(alignment: .leading, spacing: 17) {
+                LazyVStack(alignment: .leading, spacing: 22) {
                     ForEach(rest.foodList) { food in
                         if (food.category == categories[index]) {
                             Button(action: {
                                 self.isFoodDetailShowing = true
                                 model.navigateFood(food.id, rest.id)
                             }, label: {
-                                FoodCardView(food: food)
+                                FoodCardView(food: food, rest: rest)
                             })
                             .sheet(isPresented: $isFoodDetailShowing, content: {
                                 FoodDetailView(food: model.currentFood ?? Food(), rest: rest)
