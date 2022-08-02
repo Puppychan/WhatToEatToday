@@ -11,8 +11,11 @@
 		3D42C216289614F1005BA233 /* SideAppModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C215289614F1005BA233 /* SideAppModels.swift */; };
 		3D42C2182896D680005BA233 /* NotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C2172896D680005BA233 /* NotFoundView.swift */; };
 		3D42C21A2896D931005BA233 /* RestaurantLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C2192896D931005BA233 /* RestaurantLinkView.swift */; };
+		3D42C21E2898FA6C005BA233 /* RestaurantsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C21D2898FA6C005BA233 /* RestaurantsMapView.swift */; };
+		3D42C22C28992202005BA233 /* PointOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C22B28992202005BA233 /* PointOfInterest.swift */; };
+		3D42C22E28992446005BA233 /* MapDisplayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C22D28992446005BA233 /* MapDisplayButtonView.swift */; };
+		3D42C23028993874005BA233 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D42C22F28993874005BA233 /* Launch Screen.storyboard */; };
 		3D4705DB288E4C0400502DD1 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4705DA288E4C0400502DD1 /* Restaurant.swift */; };
-		3D837114289377710067C946 /* RestaurantMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D837113289377710067C946 /* RestaurantMapView.swift */; };
 		3D837119289389830067C946 /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D837118289389830067C946 /* GifView.swift */; };
 		3D83711B28938C280067C946 /* cat-eat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3D83711A28938C280067C946 /* cat-eat.gif */; };
 		3D83711F289397340067C946 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83711E289397340067C946 /* LaunchView.swift */; };
@@ -45,8 +48,11 @@
 		3D42C215289614F1005BA233 /* SideAppModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAppModels.swift; sourceTree = "<group>"; };
 		3D42C2172896D680005BA233 /* NotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundView.swift; sourceTree = "<group>"; };
 		3D42C2192896D931005BA233 /* RestaurantLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantLinkView.swift; sourceTree = "<group>"; };
+		3D42C21D2898FA6C005BA233 /* RestaurantsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsMapView.swift; sourceTree = "<group>"; };
+		3D42C22B28992202005BA233 /* PointOfInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterest.swift; sourceTree = "<group>"; };
+		3D42C22D28992446005BA233 /* MapDisplayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDisplayButtonView.swift; sourceTree = "<group>"; };
+		3D42C22F28993874005BA233 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3D4705DA288E4C0400502DD1 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		3D837113289377710067C946 /* RestaurantMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapView.swift; sourceTree = "<group>"; };
 		3D837118289389830067C946 /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
 		3D83711A28938C280067C946 /* cat-eat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "cat-eat.gif"; path = "Images/Gif/cat-eat.gif"; sourceTree = SOURCE_ROOT; };
 		3D83711E289397340067C946 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -125,8 +131,6 @@
 				3D8371332893BB110067C946 /* DetailView */,
 				3D8371322893BB060067C946 /* CardView */,
 				3D83712F2893B9BB0067C946 /* SmallDetailView */,
-				3D837113289377710067C946 /* RestaurantMapView.swift */,
-				3D42C2192896D931005BA233 /* RestaurantLinkView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -134,11 +138,14 @@
 		3D83712F2893B9BB0067C946 /* SmallDetailView */ = {
 			isa = PBXGroup;
 			children = (
+				3D837118289389830067C946 /* GifView.swift */,
+				3D42C2192896D931005BA233 /* RestaurantLinkView.swift */,
 				3D8371302893B9CC0067C946 /* RatingView.swift */,
 				3D83713C2893F6E40067C946 /* AppNameView.swift */,
 				3D83713E2893F7A70067C946 /* SimpleButton.swift */,
 				3D42C21328961015005BA233 /* CategoryItemView.swift */,
 				3D42C2172896D680005BA233 /* NotFoundView.swift */,
+				3D42C22D28992446005BA233 /* MapDisplayButtonView.swift */,
 			);
 			path = SmallDetailView;
 			sourceTree = "<group>";
@@ -158,7 +165,6 @@
 			children = (
 				3D85B3E3288FF57D001BF2AF /* RestaurantDetailView.swift */,
 				3D8371252893A7D30067C946 /* FoodDetailView.swift */,
-				3D837118289389830067C946 /* GifView.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -166,6 +172,7 @@
 		3D8371342893CC6A0067C946 /* ListView */ = {
 			isa = PBXGroup;
 			children = (
+				3D42C21D2898FA6C005BA233 /* RestaurantsMapView.swift */,
 				3D8371292893B8580067C946 /* PopularRestaurantsView.swift */,
 				3D8371372893D3DF0067C946 /* FoodListView.swift */,
 			);
@@ -226,6 +233,8 @@
 				3D837144289410650067C946 /* LaunchContentView.swift */,
 				3D837115289383630067C946 /* Home */,
 				3D8371352893CF710067C946 /* HelperView.swift */,
+				3D42C22B28992202005BA233 /* PointOfInterest.swift */,
+				3D42C22F28993874005BA233 /* Launch Screen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,6 +303,7 @@
 				3D83711B28938C280067C946 /* cat-eat.gif in Resources */,
 				3D83713B2893F1780067C946 /* GermaniaOne-Regular.ttf in Resources */,
 				3DC2FC9B2886E18F003750D3 /* Assets.xcassets in Resources */,
+				3D42C23028993874005BA233 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +319,8 @@
 				3D8371362893CF710067C946 /* HelperView.swift in Sources */,
 				3D85B3EE2892AADD001BF2AF /* AssistantModels.swift in Sources */,
 				3D42C216289614F1005BA233 /* SideAppModels.swift in Sources */,
+				3D42C22E28992446005BA233 /* MapDisplayButtonView.swift in Sources */,
+				3D42C22C28992202005BA233 /* PointOfInterest.swift in Sources */,
 				3D42C2182896D680005BA233 /* NotFoundView.swift in Sources */,
 				3D8371312893B9CC0067C946 /* RatingView.swift in Sources */,
 				3D83711F289397340067C946 /* LaunchView.swift in Sources */,
@@ -321,7 +333,7 @@
 				3D8371382893D3DF0067C946 /* FoodListView.swift in Sources */,
 				3D85B3DE288FE20E001BF2AF /* RestaurantCardView.swift in Sources */,
 				3D83712A2893B8580067C946 /* PopularRestaurantsView.swift in Sources */,
-				3D837114289377710067C946 /* RestaurantMapView.swift in Sources */,
+				3D42C21E2898FA6C005BA233 /* RestaurantsMapView.swift in Sources */,
 				3D8371262893A7D30067C946 /* FoodDetailView.swift in Sources */,
 				3D83713F2893F7A70067C946 /* SimpleButton.swift in Sources */,
 				3D85B3E0288FE384001BF2AF /* Constant.swift in Sources */,
@@ -466,8 +478,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,8 +512,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

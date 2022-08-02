@@ -13,13 +13,18 @@ struct RatingView: View {
     var fontSize = Font.headline
     var displayFull = false
     var body: some View {
-        HStack(spacing: 4) {
-            Image(systemName: "star.fill")
-                .foregroundColor(.yellow)
-                .font(iconFontSize)
-            Text("\(String(rest.rating))")
-                .foregroundColor(Color("RestCardCaptColor"))
-                .font(fontSize)
+        if !displayFull {
+            HStack(spacing: 4) {
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+                    .font(iconFontSize)
+                Text("\(String(rest.rating))")
+                    .foregroundColor(Color("RestCardCaptColor"))
+                    .font(fontSize)
+            }
+        }
+        else {
+            
         }
     }
 }

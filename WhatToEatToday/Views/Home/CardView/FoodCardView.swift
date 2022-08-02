@@ -25,7 +25,7 @@ struct FoodCardView: View {
                     Text(food.name)
 //                        .font(Font.custom("Avenir", size: 15))
                         .font(.headline)
-                        .lineLimit(nil)
+                        .lineLimit(2)
                         .lineSpacing(1)
                     
                     // Description
@@ -47,7 +47,7 @@ struct FoodCardView: View {
                 Image("\(rest.name)-\(food.name)")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 140, height: 130)
+                    .frame(width: 140, height: 110)
                     .clipped()
             }
             

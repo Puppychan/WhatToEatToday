@@ -11,11 +11,18 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var restaurants = [Restaurant]()
+    
+    // Location
     var locationManager = CLLocationManager()
     @Published var authorizationState = CLAuthorizationStatus.notDetermined
+    @Published var region: MKCoordinateRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 10.801362428637967, longitude:   106.61731939556688),
+        span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
+    )
     @Published var userLocation: CLLocation?
     
     // Current Food
@@ -39,8 +46,8 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
         
         // Set content model as the delegate of the location manager
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.startUpdatingLocation()
     }
     
     // MARK: - Deal with location
@@ -48,6 +55,33 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
         // remember to open Info -> Target -> Info -> Below Bundle Version String -> Click add -> Type "Privacy - Location When In Use Usage Description" with value "Please allow us to access your location"
         // Request permission from the user
         locationManager.requestWhenInUseAuthorization()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        // Gives us the location of the user
+        let userLocation = locations.first
+        
+        if userLocation != nil {
+            
+            // We have a location
+            // Stop requesting the location after we get it once
+            locationManager.stopUpdatingLocation()
+            
+//            // Get the placemark of the user
+//            let geoCoder = CLGeocoder()
+//
+//            geoCoder.reverseGeocodeLocation(userLocation!) { (placemarks, error) in
+//
+//                // Check that there aren't errors
+//                if error == nil && placemarks != nil {
+//
+//                    // Take the first placemark
+//                    self.placemark = placemarks?.first
+//                }
+//            }
+        }
+        
     }
     
     // MARK: - Location Manager Delegate Methods
@@ -61,6 +95,10 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
             // We have permission
             // Start geolocating the user, after we get permission
             locationManager.startUpdatingLocation()
+//            region = MKCoordinateRegion(
+//                center: locationManager.location!.coordinate,
+//                span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
+//            )
         }
         else if locationManager.authorizationStatus == .denied {
             print("You dont have permission to access")
@@ -79,7 +117,6 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
             // try to decode  json -> array modules
             let jsonDecoder = JSONDecoder()
             let restaurants = try jsonDecoder.decode([Restaurant].self, from: jsonData)
-            
             // assign parsed module to module property
             self.restaurants.append(contentsOf: restaurants)
         }

@@ -30,7 +30,7 @@ struct FoodListView: View {
 
 
                 // MARK: food display following its category
-                LazyVStack(alignment: .leading, spacing: 22) {
+                LazyVStack(alignment: .leading, spacing: 20) {
                     ForEach(rest.foodList) { food in
                         if (food.category == categories[index]) {
                             Button(action: {

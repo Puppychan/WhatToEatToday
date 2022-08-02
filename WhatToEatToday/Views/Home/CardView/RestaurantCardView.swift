@@ -90,9 +90,3 @@ struct RestaurantCardView: View {
 
     }
 }
-
-struct RestaurantCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        RestaurantCardView(rest: Restaurant(), cardWidth: 340, cardHeight: 357, displayType: "all")
-    }
-}

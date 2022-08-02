@@ -39,11 +39,11 @@ struct HomeView: View {
         NavigationView {
 
             ScrollView {
+//                RestaurantsMapView()
                 VStack {
-
-                    // MARK: - national pick
-
                     if searchQuery.isEmpty {
+                        // MARK: - national pick
+
                         // MARK: - filter category list
                         ScrollView(.horizontal) {
                             HStack(spacing: 40) {
