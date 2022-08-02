@@ -18,9 +18,7 @@ struct LaunchView: View {
         }
         else if model.authorizationState == .authorizedAlways || model.authorizationState == .authorizedWhenInUse {
 
-//            HomeView()
-//            RestaurantsMapView(places: model.restaurants)
-            RestaurantsMapView()
+            HomeView()
 
         }
         else {

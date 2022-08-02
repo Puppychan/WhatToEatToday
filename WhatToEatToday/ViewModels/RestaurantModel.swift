@@ -19,11 +19,10 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
     // Location
     var locationManager = CLLocationManager()
     @Published var authorizationState = CLAuthorizationStatus.notDetermined
-    @Published var region: MKCoordinateRegion = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 10.801362428637967, longitude:   106.61731939556688),
-        span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
-    )
-    @Published var userLocation: CLLocation?
+//    @Published var currentRegion = MKCoordinateRegion()
+    // Current user region and coordinate
+    @Published var userLocation = MKCoordinateRegion()
+    @Published var currentUserCoordinate: CLLocationCoordinate2D?
     
     // Current Food
     @Published var currentFood: Food?
@@ -35,73 +34,74 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
     var currentRestaurantIndex = 0
     
     override init() {
-//        for index in 0...9 {
-//            restaurants.append(Restaurant())
-//            restaurants[index].foodList.append(Food())
-//        }
-        
         // Init method of NSObject
         super.init()
         getLocalData()
         
         // Set content model as the delegate of the location manager
         locationManager.delegate = self
-//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        locationManager.startUpdatingLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
     }
     
-    // MARK: - Deal with location
+    // MARK: - Location Manager Delegate Methods
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+
+        // Update the authorizationState property
+        authorizationState = locationManager.authorizationStatus
+
+        if locationManager.authorizationStatus == .authorizedAlways ||
+            locationManager.authorizationStatus == .authorizedWhenInUse {
+            // after getting permission
+            locationManager.startUpdatingLocation()
+        }
+        else if locationManager.authorizationStatus == .denied {
+            print("No Permission")
+        }
+    }
+
+    // MARK: Location manager
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // stop auto zooming in apple map
+        manager.stopUpdatingLocation()
+        // store userLocation
+        locations.last.map {
+            currentUserCoordinate = CLLocationCoordinate2D(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude)
+            userLocation = createCoordinateRegion(currentUserCoordinate!)
+            
+            // display recent restaurants inside the regions
+//            currentRegion = userLocation
+        }
+
+    }
+    // MARK: Ask user location permission
     func requestGeolocationPermission() {
         // remember to open Info -> Target -> Info -> Below Bundle Version String -> Click add -> Type "Privacy - Location When In Use Usage Description" with value "Please allow us to access your location"
         // Request permission from the user
         locationManager.requestWhenInUseAuthorization()
     }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        // Gives us the location of the user
-        let userLocation = locations.first
-        
-        if userLocation != nil {
-            
-            // We have a location
-            // Stop requesting the location after we get it once
-            locationManager.stopUpdatingLocation()
-            
-//            // Get the placemark of the user
-//            let geoCoder = CLGeocoder()
-//
-//            geoCoder.reverseGeocodeLocation(userLocation!) { (placemarks, error) in
-//
-//                // Check that there aren't errors
-//                if error == nil && placemarks != nil {
-//
-//                    // Take the first placemark
-//                    self.placemark = placemarks?.first
-//                }
-//            }
-        }
-        
+    func createCoordinateRegion(_ coordinate: CLLocationCoordinate2D) -> MKCoordinateRegion {
+        return MKCoordinateRegion(
+            center: coordinate,
+            span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+        )
     }
     
-    // MARK: - Location Manager Delegate Methods
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        
-        // Update the authorizationState property
-        authorizationState = locationManager.authorizationStatus
-        
-        if locationManager.authorizationStatus == .authorizedAlways ||
-            locationManager.authorizationStatus == .authorizedWhenInUse {
-            // We have permission
-            // Start geolocating the user, after we get permission
-            locationManager.startUpdatingLocation()
-//            region = MKCoordinateRegion(
-//                center: locationManager.location!.coordinate,
-//                span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
-//            )
+    
+    private func convertCoordinateString(_ coordinate: CLLocationCoordinate2D) -> String {
+        return "\(String(format: "%f", coordinate.latitude)),\(String(format: "%f", coordinate.longitude))"
+//        return "\(coordinate.latitude.description),\(coordinate.latitude.description)"
+    }
+    func openAppleMap(endCoordinate: CLLocationCoordinate2D) {
+        let directionsURL = "http://maps.apple.com/?saddr=\(convertCoordinateString(currentUserCoordinate!))&daddr=\(convertCoordinateString(endCoordinate))"
+        guard let url = URL(string: directionsURL) else {
+            return
         }
-        else if locationManager.authorizationStatus == .denied {
-            print("You dont have permission to access")
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
         }
     }
     
