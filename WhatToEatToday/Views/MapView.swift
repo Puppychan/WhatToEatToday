@@ -30,7 +30,7 @@ struct MapView: View {
                         currentRest = rest
 //                        model.openAppleMap(endCoordinate: rest.coordinateObject())
                     }, label: {
-                        MapAnnotationView(rest: rest, showMap: {model.openAppleMap(endCoordinate: rest.coordinateObject())})
+                        MapAnnotation(rest: rest, showMap: {model.openAppleMap(endCoordinate: rest.coordinateObject())})
                         })
                         .buttonStyle(PlainButtonStyle())
                 })

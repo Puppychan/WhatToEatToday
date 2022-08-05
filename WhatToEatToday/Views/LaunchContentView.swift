@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LaunchContentView: View {
-    @EnvironmentObject var model : RestaurantModel
+    @EnvironmentObject var model: RestaurantModel
     var openSetting = false
     var body: some View {
         ZStack {
@@ -21,14 +21,14 @@ struct LaunchContentView: View {
                 // MARK: Name of the app
                 AppNameView()
 
-                
+
                 // MARK: open setting button
                 Button {
                     if openSetting {
                         // Open settings by getting the settings url
                         if let url = URL(string: UIApplication.openSettingsURLString) {
                             if UIApplication.shared.canOpenURL(url) {
-                               // If we can open this settings url, then open it
+                                // If we can open this settings url, then open it
                                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
                             }
                         }
@@ -37,7 +37,22 @@ struct LaunchContentView: View {
                         model.requestGeolocationPermission()
                     }
 
-                } label: { SimpleButton(message: "Get Started") }
+                } label: {
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(.black)
+                            .frame(height: 50)
+                            .cornerRadius(15)
+                            .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.3), radius: 10, x: -5, y: 5)
+
+                        Text("Let's Eat")
+                            .bold()
+                            .foregroundColor(.white)
+                            .padding()
+                    }
+                    
+                     
+                }
 
 
                 // MARK: gif
@@ -52,11 +67,5 @@ struct LaunchContentView: View {
                 .multilineTextAlignment(.center)
         }
             .ignoresSafeArea(.all, edges: .all)
-    }
-}
-
-struct LaunchContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        LaunchContentView()
     }
 }

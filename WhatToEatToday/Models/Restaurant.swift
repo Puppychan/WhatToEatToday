@@ -22,10 +22,10 @@ struct Restaurant : Decodable, Identifiable {
     var hasGone: Bool = false
     var isInCustomList: Bool = false
     
-//    var priceRange: Double = 0.0
-    
     var foodList = [Food]()
-
+//    static func testData ()-> Food {
+//        return Food(id: <#T##Int#>, name: <#T##String#>, description: <#T##String#>, category: <#T##String#>, price: <#T##Int#>)
+//    }
     func coordinateObject() -> CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: coordinates[0], longitude: coordinates[1])
     }

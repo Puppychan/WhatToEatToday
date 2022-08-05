@@ -8,6 +8,7 @@
 //ref:
 //https://stackoverflow.com/questions/24534229/swift-modifying-arrays-inside-dictionaries
 //https://stackoverflow.com/questions/37517829/get-distinct-elements-in-an-array-by-object-property
+// https://stackoverflow.com/questions/21983559/opens-apple-maps-app-from-ios-app-with-directions
 
 import Foundation
 import CoreLocation
@@ -94,7 +95,7 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
 //        return "\(coordinate.latitude.description),\(coordinate.latitude.description)"
     }
     func openAppleMap(endCoordinate: CLLocationCoordinate2D) {
-        let directionsURL = "http://maps.apple.com/?saddr=\(convertCoordinateString(currentUserCoordinate!))&daddr=\(convertCoordinateString(endCoordinate))"
+        let directionsURL = "http://maps.apple.com/?saddr=\(convertCoordinateString(currentUserCoordinate ?? CLLocationCoordinate2D()))&daddr=\(convertCoordinateString(endCoordinate))"
         guard let url = URL(string: directionsURL) else {
             return
         }
