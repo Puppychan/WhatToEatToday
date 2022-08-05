@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MapAnnotation: View {
+struct MapAnnotationView: View {
     @State var isShowing = false
     var rest: Restaurant
     var showMap: () -> Void
