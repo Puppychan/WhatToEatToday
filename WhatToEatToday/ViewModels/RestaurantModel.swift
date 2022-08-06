@@ -17,23 +17,23 @@ import MapKit
 class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var restaurants = [Restaurant]()
     
-    // Location
+    // MARK: Location
     var locationManager = CLLocationManager()
     @Published var authorizationState = CLAuthorizationStatus.notDetermined
-//    @Published var currentRegion = MKCoordinateRegion()
     // Current user region and coordinate
     @Published var userLocation = MKCoordinateRegion()
     @Published var currentUserCoordinate: CLLocationCoordinate2D?
     
-    // Current Food
+    // MARK: Current Food
     @Published var currentFood: Food?
     var currentFoodIndex = 0
     
     
-    // Current restaurant
+    // MARK: Current restaurant
     @Published var currentRestaurant: Restaurant?
     var currentRestaurantIndex = 0
     
+    // MARK: init
     override init() {
         // Init method of NSObject
         super.init()
@@ -45,7 +45,8 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
         locationManager.startUpdatingLocation()
     }
     
-    // MARK: - Location Manager Delegate Methods
+    // MARK: - Location Methods
+    //MARK:  Location Manager Delegate Methods
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
 
         // Update the authorizationState property
@@ -62,14 +63,13 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
     }
 
     // MARK: Location manager
-
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // stop auto zooming in apple map
         manager.stopUpdatingLocation()
         // store userLocation
         locations.last.map {
             currentUserCoordinate = CLLocationCoordinate2D(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude)
-            userLocation = createCoordinateRegion(currentUserCoordinate!)
+            userLocation = UltilityModel.createCoordinateRegion(currentUserCoordinate!)
             
             // display recent restaurants inside the regions
 //            currentRegion = userLocation
@@ -82,23 +82,16 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
         // Request permission from the user
         locationManager.requestWhenInUseAuthorization()
     }
-    func createCoordinateRegion(_ coordinate: CLLocationCoordinate2D) -> MKCoordinateRegion {
-        return MKCoordinateRegion(
-            center: coordinate,
-            span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-        )
-    }
     
-    
-    private func convertCoordinateString(_ coordinate: CLLocationCoordinate2D) -> String {
-        return "\(String(format: "%f", coordinate.latitude)),\(String(format: "%f", coordinate.longitude))"
-//        return "\(coordinate.latitude.description),\(coordinate.latitude.description)"
-    }
+    // open apple map to show routes to the user
     func openAppleMap(endCoordinate: CLLocationCoordinate2D) {
-        let directionsURL = "http://maps.apple.com/?saddr=\(convertCoordinateString(currentUserCoordinate ?? CLLocationCoordinate2D()))&daddr=\(convertCoordinateString(endCoordinate))"
-        guard let url = URL(string: directionsURL) else {
+        // create url to open apple map having route from current location to place
+        let routeURL = "http://maps.apple.com/?saddr=\(UltilityModel.convertCoordinateString(currentUserCoordinate ?? CLLocationCoordinate2D()))&daddr=\(UltilityModel.convertCoordinateString(endCoordinate))"
+        // binding
+        guard let url = URL(string: routeURL) else {
             return
         }
+        // open apple map based on the ios version
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
@@ -177,24 +170,4 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
         currentFood = restaurants[restaurantIndex].foodList[currentFoodIndex]
     }
     
-}
-
-
-
-
-extension Array {
-    func unique<T:Hashable>(by: ((Element) -> (T)))  -> [Element] {
-        //the unique list kept in a Set for fast retrieval
-        var set = Set<T>()
-        //keeping the unique list of elements but ordered
-        var arrayOrdered = [Element]()
-        for value in self {
-            if !set.contains(by(value)) {
-                set.insert(by(value))
-                arrayOrdered.append(value)
-            }
-        }
-
-        return arrayOrdered
-    }
 }

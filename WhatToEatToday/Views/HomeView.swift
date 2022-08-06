@@ -35,22 +35,21 @@ struct HomeView: View {
                             // MARK: - national pick
 
                             // MARK: - filter category list
-                            ScrollView(.horizontal) {
-                                HStack(spacing: 40) {
-                                    ForEach(SideAppModels.restaurantCategories, id: \.self) { cate in
-                                        CategoryItemView(name: cate)
-
-                                    }
-                                        .frame(height: 90)
-
-                                }
-                                    .padding()
-                            }
-                                .background(Color("CategoryFilterBckColor"))
+//                            ScrollView(.horizontal) {
+//                                HStack(spacing: 40) {
+//                                    ForEach(SideAppModels.restaurantCategories, id: \.self) { cate in
+//                                        CategoryItemView(name: cate)
+//
+//                                    }
+//                                        .frame(height: 90)
+//
+//                                }
+//                                    .padding()
+//                            }
+//                                .background(Color("CategoryFilterBckColor"))
 
                             // MARK: - Display popular restaurants
                             PopularRestaurantsView()
-                            Divider()
                         }
 
                         // MARK: - Display restaurant when searching and display all restaurants

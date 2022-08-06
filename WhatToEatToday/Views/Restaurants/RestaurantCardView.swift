@@ -23,7 +23,7 @@ struct RestaurantCardView: View {
                 .scaledToFill()
                 .frame(width: cardWidth, height: cardHeight)
 //                .aspectRatio(CGSize(width: cardWidth, height: cardHeight), contentMode: .fill)
-                .cornerRadius(20)
+                .cornerRadius(10)
                 .clipped()
 
             // text
@@ -77,18 +77,20 @@ struct RestaurantCardView: View {
                 }
 
             }
+            .frame(width: cardWidth)
+            
             // MARK: divider
             if displayType == "all" {
                 Divider()
-                    .frame(height: 1.7)
+                    .frame(width: cardWidth, height: 1.7)
                     .overlay(Color("RestCardBorderColor"))
                     .cornerRadius(10)
-                    .padding(.bottom)                
+                    .padding(.vertical, 20)
             }
         }
         .background(Color("RestCardBckColor"))
         .cornerRadius(20)
-        .padding()
+        .padding(.horizontal)
         .frame(width: cardWidth)
 
     }

@@ -10,20 +10,20 @@ import SwiftUI
 struct PopularRestaurantsView: View {
     @EnvironmentObject var model: RestaurantModel
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             Text("Popular")
-                .font(.title2)
+                .font(.title)
                 .bold()
-                .padding()
+                .padding(.horizontal)
             
             // MARK: display list of popular restaurants horizontally
             if (model.hasPopularRestaurant()) {
-                ScrollView(.horizontal) {
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
                         ForEach(model.restaurants.indices, id: \.self) { index in
                             // check if restaurant is popular -> display
                             if (model.restaurants[index].isPopular()) {
-                                RestaurantLinkView(
+                                NavigateLink(
                                     destinationView: AnyView(RestaurantDetailView(rest: model.restaurants[index])),
                                    labelView: AnyView(RestaurantCardView(rest: model.restaurants[index], cardWidth: 250, cardHeight: 180, displayType: "popular")),
                                     navigateMethod: {model.navigateRestaurant(model.restaurants[index].id)})

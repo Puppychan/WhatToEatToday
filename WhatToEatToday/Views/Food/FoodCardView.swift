@@ -10,6 +10,8 @@ import SwiftUI
 struct FoodCardView: View {
     var food: Food
     var rest: Restaurant
+    private let cardHeight: CGFloat = 110
+    private let imgWidth: CGFloat = 150
     var body: some View {
         ZStack {
             // what if no image??
@@ -18,16 +20,16 @@ struct FoodCardView: View {
                 .foregroundColor(.white)
 
             // MARK: food information
-            HStack(spacing: 0) {
+            HStack {
 
                 // information
                 VStack(alignment: .leading, spacing: 3) {
                     Text(food.name)
 //                        .font(Font.custom("Avenir", size: 15))
-                        .font(.headline)
-                        .lineLimit(2)
+                    .font(.headline)
+                        .lineLimit(1)
                         .lineSpacing(1)
-                    
+
                     // Description
                     Text(food.description)
                         .lineLimit(1)
@@ -40,23 +42,44 @@ struct FoodCardView: View {
                         .foregroundColor(Color("FoodCardPriceColor"))
                         .bold()
                 }
-                .padding()
+                    .padding()
+
                 Spacer()
-                
+
                 // image
-                Image("\(rest.name)-\(food.name)")
-                    .resizable()
+                Image(food.category == "Drink" ? food.name : "\(rest.name)-\(food.name)")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .brightness(-0.03)
+//                    .frame(width: 140, height: 140)
+//                    .clipShape(Circle())
+//                    .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.8), radius: 5, x: 3, y: 3)
+                .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 140, height: 110)
+                    .frame(width: imgWidth, height: cardHeight)
                     .clipped()
+                    .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.1), radius: 5, x: -3, y: 3)
+
             }
-            
+
 
         }
 //        .aspectRatio(CGSize(width: 150, height: 100), contentMode: .fit)
-        .frame(minHeight: 110)
-        .cornerRadius(15)
-        .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.17), radius: 10, x: -5, y: 10)
-        
+        .frame(height: cardHeight)
+            .cornerRadius(15)
+            .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.17), radius: 10, x: -5, y: 10)
+
+    }
+}
+
+struct FoodCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        let rest = Restaurant.testData()
+        ZStack {
+            Rectangle()
+                .foregroundColor(.pink)
+            FoodCardView(food: rest.foodList[0], rest: rest)
+
+        }
     }
 }

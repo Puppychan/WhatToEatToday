@@ -25,18 +25,20 @@ struct RestaurantDetailView: View {
                 // MARK: - Restaurant Info
                 VStack {
                     // MARK: restaurant cover image
+                    // for adding effect to the image
                     GeometryReader { geo in
-                        ZStack {
+                        ZStack(alignment: .center) {
 
                             if geo.frame(in: .global).minY <= 0 {
                                 // scroll down outside the screen -> move image up
                                 Image("\(rest.name)-bck")
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    // move image up
-                                    .offset(y: geo.frame(in: .global).minY / 9)
-                                    .clipped()
                                 
+                                // move image up
+                                .offset(y: geo.frame(in: .global).minY / 9)
+                                    .clipped()
+
                             }
                             else {
                                 // scroll up -> increase image size + move image down
@@ -44,17 +46,21 @@ struct RestaurantDetailView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .scaleEffect(1 + geo.frame(in: .global).minY / 500) // change scale of image
-                                    .animation(.easeInOut.delay(2), value: imageScale)
                                     .clipped()
                                     // move image down
                                     .offset(y: -geo.frame(in: .global).minY)
+                                    .animation(.easeInOut.delay(2), value: imageScale)
+                                    .background(Color("RestDetailImageBckColor").opacity(0.4))
                             }
                         }
                         // for fixing the text stand on the image bug
-                        .frame(height: 600)
+//                        .frame(height: 450)
+                        .frame(height: 600, alignment: .center)
+                            .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.1), radius: 5, x: 3, y: 3)
 
                     }
-                    .frame(height: 603)
+//                    .frame(height: 457)
+                    .frame(height: 603, alignment: .center)
 
 
 
@@ -74,6 +80,7 @@ struct RestaurantDetailView: View {
                             Text(rest.address)
                                 .foregroundColor(Color("RestDetailAddColor"))
                                 .font(.headline)
+                                .lineLimit(1)
 
                             Spacer()
 
@@ -100,7 +107,7 @@ struct RestaurantDetailView: View {
 
             }
         }
-        .ignoresSafeArea()
+            .ignoresSafeArea()
     }
 }
 

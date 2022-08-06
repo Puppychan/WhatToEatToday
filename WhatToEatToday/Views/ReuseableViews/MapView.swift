@@ -21,22 +21,20 @@ struct MapView: View {
 
 
     var body: some View {
-        Map(coordinateRegion: isDisplayAll ? $model.userLocation : .constant(model.createCoordinateRegion(singleRestaurant!.coordinateObject())) ,
+        Map(coordinateRegion: isDisplayAll ? $model.userLocation : .constant(UltilityModel.createCoordinateRegion(singleRestaurant!.coordinateObject())) ,
             interactionModes: MapInteractionModes.all,
             showsUserLocation: true,
             annotationItems: isDisplayAll ? model.restaurants : [singleRestaurant!]) { rest in
             MapAnnotation(coordinate: rest.coordinateObject(), content: {
                     Button(action: {
                         currentRest = rest
-//                        model.openAppleMap(endCoordinate: rest.coordinateObject())
                     }, label: {
-                        MapAnnotation(rest: rest, showMap: {model.openAppleMap(endCoordinate: rest.coordinateObject())})
+                        MapAnnotationView(rest: rest, showMap: {model.openAppleMap(endCoordinate: rest.coordinateObject())})
                         })
                         .buttonStyle(PlainButtonStyle())
                 })
         }
             .ignoresSafeArea(.all)
-            .preferredColorScheme(.dark)
 
     }
 }

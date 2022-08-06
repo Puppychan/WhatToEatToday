@@ -17,10 +17,6 @@ struct MapDisplayButton: View {
                 Spacer()
                 NavigationLink(destination: {
                     MapView()
-//                    MapListView(isShowingMap: $isShowingMap)
-//                        .onAppear(perform: {
-//                        isShowingMap.toggle()
-//                    })
                 }, label: {
                         ZStack {
                             Circle()

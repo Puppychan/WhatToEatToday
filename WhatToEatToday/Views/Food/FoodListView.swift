@@ -16,7 +16,7 @@ struct FoodListView: View {
             let categories = model.findAllCategories(rest.id)
             ForEach(categories.indices, id: \.self) { index in
                 // MARK: category name
-                Text(categories[index].uppercased())
+                Text(categories[index] == "" ? "DISHES" : categories[index].uppercased())
                     .bold()
                     .foregroundColor(.white)
                     .font(.title2)
@@ -37,10 +37,13 @@ struct FoodListView: View {
                                 self.isFoodDetailShowing = true
                                 model.navigateFood(food.id, rest.id)
                             }, label: {
-                                FoodCardView(food: food, rest: rest)
-                            })
-                            .sheet(isPresented: $isFoodDetailShowing, content: {
-                                FoodDetailView(food: model.currentFood ?? Food(), rest: rest)
+                                    FoodCardView(food: food, rest: rest)
+                                })
+                                .sheet(isPresented: $isFoodDetailShowing, content: {
+                                    // only display if food is not drink (drink have nothing to show in details)
+                                    if (food.category != "Drink") {
+                                        FoodDetailView(food: model.currentFood ?? Food(), rest: rest)
+                                    }
                             })
                             // for user style not button auto style
                             .buttonStyle(PlainButtonStyle())
