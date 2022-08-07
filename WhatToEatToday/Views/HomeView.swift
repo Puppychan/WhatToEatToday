@@ -1,9 +1,16 @@
-//
-//  HomeView.swift
-//  WhatToEatToday
-//
-//  Created by Nhung Tran on 19/07/2022.
-//
+/*
+    RMIT University Vietnam
+    Course: COSC2659 iOS Development
+    Semester: 2022B
+    Assessment: Assignment 2
+    Author: Tran Mai Nhung
+    ID: s3879954
+    Created  date: 19/07/2022
+    Last modified: 07/08/2022
+    Acknowledgement:
+- Canvas, CodeWithChris Course
+- https://www.hackingwithswift.com/quick-start/swiftui/how-to-add-a-search-bar-to-filter-your-data
+*/
 
 import SwiftUI
 
@@ -20,26 +27,8 @@ struct HomeView: View {
 
             ZStack {
                 ScrollView {
-    //                RestaurantsMapView()
                     VStack {
                         if searchQuery.isEmpty {
-                            // List of
-                            // MARK: - national pick
-
-                            // MARK: - filter category list
-//                            ScrollView(.horizontal) {
-//                                HStack(spacing: 40) {
-//                                    ForEach(SideAppModels.restaurantCategories, id: \.self) { cate in
-//                                        CategoryItemView(name: cate)
-//
-//                                    }
-//                                        .frame(height: 90)
-//
-//                                }
-//                                    .padding()
-//                            }
-//                                .background(Color("CategoryFilterBckColor"))
-
                             // MARK: - Display popular restaurants
                             PopularRestaurantsView()
                         }

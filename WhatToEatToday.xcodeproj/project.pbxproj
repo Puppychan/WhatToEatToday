@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D275821289FC4BA00C7DD6C /* ImageShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D275820289FC4BA00C7DD6C /* ImageShadowView.swift */; };
+		3D275823289FCDBD00C7DD6C /* DontUse in Resources */ = {isa = PBXBuildFile; fileRef = 3D275822289FCDBD00C7DD6C /* DontUse */; };
 		3D304AFB289CBD4B00B269ED /* UltilityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D304AFA289CBD4B00B269ED /* UltilityModel.swift */; };
 		3D304AFD289CBFB700B269ED /* UltilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D304AFC289CBFB700B269ED /* UltilityView.swift */; };
 		3D304B03289ED8A300B269ED /* Ultility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D304B02289ED8A300B269ED /* Ultility.swift */; };
 		3D344BA9289F5E4300C270DB /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D344BA8289F5E4300C270DB /* IngredientsView.swift */; };
-		3D42C21428961015005BA233 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C21328961015005BA233 /* CategoryItemView.swift */; };
-		3D42C216289614F1005BA233 /* SideAppModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C215289614F1005BA233 /* SideAppModels.swift */; };
 		3D42C2182896D680005BA233 /* NotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C2172896D680005BA233 /* NotFoundView.swift */; };
 		3D42C21A2896D931005BA233 /* NavigateLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C2192896D931005BA233 /* NavigateLink.swift */; };
 		3D42C22E28992446005BA233 /* MapDisplayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C22D28992446005BA233 /* MapDisplayButton.swift */; };
 		3D42C25F28999B3F005BA233 /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C25E28999B3F005BA233 /* MapAnnotationView.swift */; };
 		3D42C26128999B6D005BA233 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C26028999B6D005BA233 /* MapView.swift */; };
-		3D42C2632899C8F9005BA233 /* MapListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C2622899C8F9005BA233 /* MapListView.swift */; };
 		3D4705DB288E4C0400502DD1 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4705DA288E4C0400502DD1 /* Restaurant.swift */; };
 		3D837119289389830067C946 /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D837118289389830067C946 /* GifView.swift */; };
 		3D83711B28938C280067C946 /* cat-eat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3D83711A28938C280067C946 /* cat-eat.gif */; };
@@ -44,18 +43,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D275820289FC4BA00C7DD6C /* ImageShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageShadowView.swift; sourceTree = "<group>"; };
+		3D275822289FCDBD00C7DD6C /* DontUse */ = {isa = PBXFileReference; lastKnownFileType = text; path = DontUse; sourceTree = "<group>"; };
 		3D304AFA289CBD4B00B269ED /* UltilityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltilityModel.swift; sourceTree = "<group>"; };
 		3D304AFC289CBFB700B269ED /* UltilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltilityView.swift; sourceTree = "<group>"; };
 		3D304B02289ED8A300B269ED /* Ultility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ultility.swift; sourceTree = "<group>"; };
 		3D344BA8289F5E4300C270DB /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
-		3D42C21328961015005BA233 /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
-		3D42C215289614F1005BA233 /* SideAppModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAppModels.swift; sourceTree = "<group>"; };
 		3D42C2172896D680005BA233 /* NotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundView.swift; sourceTree = "<group>"; };
 		3D42C2192896D931005BA233 /* NavigateLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateLink.swift; sourceTree = "<group>"; };
 		3D42C22D28992446005BA233 /* MapDisplayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDisplayButton.swift; sourceTree = "<group>"; };
 		3D42C25E28999B3F005BA233 /* MapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
 		3D42C26028999B6D005BA233 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		3D42C2622899C8F9005BA233 /* MapListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListView.swift; sourceTree = "<group>"; };
 		3D4705DA288E4C0400502DD1 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		3D837118289389830067C946 /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
 		3D83711A28938C280067C946 /* cat-eat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "cat-eat.gif"; path = "Images/Gif/cat-eat.gif"; sourceTree = SOURCE_ROOT; };
@@ -159,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				3D4705DA288E4C0400502DD1 /* Restaurant.swift */,
-				3D42C215289614F1005BA233 /* SideAppModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,8 +177,8 @@
 				3D42C2192896D931005BA233 /* NavigateLink.swift */,
 				3D8371302893B9CC0067C946 /* RatingView.swift */,
 				3D83713C2893F6E40067C946 /* AppNameView.swift */,
-				3D42C21328961015005BA233 /* CategoryItemView.swift */,
 				3D42C2172896D680005BA233 /* NotFoundView.swift */,
+				3D275820289FC4BA00C7DD6C /* ImageShadowView.swift */,
 			);
 			path = ReuseableViews;
 			sourceTree = "<group>";
@@ -221,6 +218,7 @@
 				3DC2FCA42886E1CE003750D3 /* Views */,
 				3DC2FC9A2886E18F003750D3 /* Assets.xcassets */,
 				3DC2FC9C2886E18F003750D3 /* Preview Content */,
+				3D275822289FCDBD00C7DD6C /* DontUse */,
 			);
 			path = WhatToEatToday;
 			sourceTree = "<group>";
@@ -239,7 +237,6 @@
 				3DC2FC962886E18E003750D3 /* WhatToEatTodayApp.swift */,
 				3D304AF7289CB9BA00B269ED /* LaunchViews */,
 				3DC2FCA52886E1E3003750D3 /* HomeView.swift */,
-				3D42C2622899C8F9005BA233 /* MapListView.swift */,
 				3D304AF5289CB7C500B269ED /* Food */,
 				3D304AF4289CB77B00B269ED /* Restaurants */,
 				3D83712F2893B9BB0067C946 /* ReuseableViews */,
@@ -308,6 +305,7 @@
 				3DC2FC9E2886E18F003750D3 /* Preview Assets.xcassets in Resources */,
 				3D85B3EA289144FA001BF2AF /* restaurants.json in Resources */,
 				3D83711B28938C280067C946 /* cat-eat.gif in Resources */,
+				3D275823289FCDBD00C7DD6C /* DontUse in Resources */,
 				3D83713B2893F1780067C946 /* GermaniaOne-Regular.ttf in Resources */,
 				3DC2FC9B2886E18F003750D3 /* Assets.xcassets in Resources */,
 			);
@@ -322,8 +320,6 @@
 			files = (
 				3D85B3EC28917B7D001BF2AF /* FoodCardView.swift in Sources */,
 				3DC2FC972886E18E003750D3 /* WhatToEatTodayApp.swift in Sources */,
-				3D42C216289614F1005BA233 /* SideAppModels.swift in Sources */,
-				3D42C2632899C8F9005BA233 /* MapListView.swift in Sources */,
 				3D42C22E28992446005BA233 /* MapDisplayButton.swift in Sources */,
 				3D42C25F28999B3F005BA233 /* MapAnnotationView.swift in Sources */,
 				3D42C2182896D680005BA233 /* NotFoundView.swift in Sources */,
@@ -333,13 +329,13 @@
 				3DC2FCA62886E1E3003750D3 /* HomeView.swift in Sources */,
 				3D85B3DC288FB0C8001BF2AF /* RestaurantModel.swift in Sources */,
 				3D4705DB288E4C0400502DD1 /* Restaurant.swift in Sources */,
-				3D42C21428961015005BA233 /* CategoryItemView.swift in Sources */,
 				3D344BA9289F5E4300C270DB /* IngredientsView.swift in Sources */,
 				3D85B3E4288FF57D001BF2AF /* RestaurantDetailView.swift in Sources */,
 				3D83713D2893F6E40067C946 /* AppNameView.swift in Sources */,
 				3D304B03289ED8A300B269ED /* Ultility.swift in Sources */,
 				3D8371382893D3DF0067C946 /* FoodListView.swift in Sources */,
 				3D85B3DE288FE20E001BF2AF /* RestaurantCardView.swift in Sources */,
+				3D275821289FC4BA00C7DD6C /* ImageShadowView.swift in Sources */,
 				3D83712A2893B8580067C946 /* PopularRestaurantsView.swift in Sources */,
 				3D8371262893A7D30067C946 /* FoodDetailView.swift in Sources */,
 				3D42C26128999B6D005BA233 /* MapView.swift in Sources */,
@@ -486,7 +482,6 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -520,7 +515,6 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;

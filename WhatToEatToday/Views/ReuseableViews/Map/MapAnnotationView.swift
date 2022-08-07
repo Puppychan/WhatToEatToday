@@ -1,44 +1,65 @@
-//
-//  MapAnnotationView.swift
-//  TestAsm1
-//
-//  Created by Nhung Tran on 03/08/2022.
-//
+/*
+    RMIT University Vietnam
+    Course: COSC2659 iOS Development
+    Semester: 2022B
+    Assessment: Assignment 2
+    Author: Tran Mai Nhung
+    ID: s3879954
+    Created  date: 04/08/2022
+    Last modified: 07/08/2022
+    Acknowledgement:
+ - Canvas, CodeWithChris Course
+*/
 
 import SwiftUI
 
 struct MapAnnotationView: View {
+    @EnvironmentObject var model: RestaurantModel
     @State var isShowing = false
     var rest: Restaurant
     var showMap: () -> Void
     var body: some View {
         VStack(spacing: 10) {
+            // MARK: card showed after tapping
             ZStack {
                 Rectangle()
                     .foregroundColor(.white)
-                HStack {
-                    Text(rest.address)
+                VStack {
+                    // Restaurant name
+                    Text(rest.name)
                         .lineLimit(1)
-                        .font(.subheadline)
+                        .font(.title2)
                         .frame(width: 120)
-                    Image(systemName: "location.fill.viewfinder")
-                        .font(.headline)
-                        .onTapGesture {
-                            isShowing = false
-                            showMap()
-                        }
+                        .foregroundColor(Color("RestDetailTitleColor"))
+
+                    // click here to open route
+                    HStack {
+                        Text(rest.address)
+                            .lineLimit(1)
+                            .font(.headline)
+                            .frame(width: 120)
+                        Spacer()
+                        Image(systemName: "location.fill.viewfinder")
+                            .font(.title3)
+
+                    }
                 }
+
                     .foregroundColor(.black)
                     .padding(7)
-
+                    .onTapGesture {
+                    isShowing = false
+                    showMap()
+                }
             }
-                .frame(height: 50)
                 .cornerRadius(10)
                 .opacity(isShowing ? 1 : 0)
+
+            // MARK: the marker
             Image("marker")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
+                .frame(width: 40, height: 40)
                 .onTapGesture {
                 isShowing.toggle()
             }

@@ -1,9 +1,16 @@
-//
-//  UltilityModel.swift
-//  WhatToEatToday
-//
-//  Created by Nhung Tran on 05/08/2022.
-// https://www.movable-type.co.uk/scripts/latlong.html
+/*
+    RMIT University Vietnam
+    Course: COSC2659 iOS Development
+    Semester: 2022B
+    Assessment: Assignment 2
+    Author: Tran Mai Nhung
+    ID: s3879954
+    Created  date: 05/08/2022
+    Last modified: 07/08/2022
+    Acknowledgement:
+- Canvas, CodeWithChris Course
+- https://www.movable-type.co.uk/scripts/latlong.html
+ */
 
 
 import Foundation
@@ -15,7 +22,7 @@ struct UltilityModel {
     static func createCoordinateRegion(_ coordinate: CLLocationCoordinate2D) -> MKCoordinateRegion {
         return MKCoordinateRegion(
             center: coordinate,
-            span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+            span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         )
     }
 

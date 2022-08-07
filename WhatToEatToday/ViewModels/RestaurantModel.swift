@@ -1,14 +1,18 @@
-//
-//  RestaurantModel.swift
-//  WhatToEatToday
-//
-//  Created by Nhung Tran on 26/07/2022.
-//
-
-//ref:
-//https://stackoverflow.com/questions/24534229/swift-modifying-arrays-inside-dictionaries
-//https://stackoverflow.com/questions/37517829/get-distinct-elements-in-an-array-by-object-property
-// https://stackoverflow.com/questions/21983559/opens-apple-maps-app-from-ios-app-with-directions
+/*
+    RMIT University Vietnam
+    Course: COSC2659 iOS Development
+    Semester: 2022B
+    Assessment: Assignment 2
+    Author: Tran Mai Nhung
+    ID: s3879954
+    Created  date: 26/07/2022
+    Last modified: 07/08/2022
+    Acknowledgement:
+- Canvas, CodeWithChris Course
+- https://stackoverflow.com/questions/24534229/swift-modifying-arrays-inside-dictionaries
+- https://stackoverflow.com/questions/37517829/get-distinct-elements-in-an-array-by-object-property
+- https://stackoverflow.com/questions/21983559/opens-apple-maps-app-from-ios-app-with-directions
+*/
 
 import Foundation
 import CoreLocation
@@ -31,6 +35,7 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
     
     // MARK: Current restaurant
     @Published var currentRestaurant: Restaurant?
+    
     var currentRestaurantIndex = 0
     
     // MARK: init
