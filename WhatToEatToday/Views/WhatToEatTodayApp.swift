@@ -16,14 +16,9 @@ import SwiftUI
 @main
 struct WhatToEatTodayApp: App {
     var body: some Scene {
-//        let model = RestaurantModel()
         WindowGroup {
-//            HomeView()
-//            RestaurantMapView()
-//            LocationDenyView()
             LaunchView()
                 .environmentObject(RestaurantModel())
-//            RestaurantsMapView(places: model.restaurants)
         }
     }
 }

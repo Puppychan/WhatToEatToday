@@ -1,15 +1,15 @@
 /*
-    RMIT University Vietnam
-    Course: COSC2659 iOS Development
-    Semester: 2022B
-    Assessment: Assignment 2
-    Author: Tran Mai Nhung
-    ID: s3879954
-    Created  date: 29/07/2022
-    Last modified: 07/08/2022
-    Acknowledgement:
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2022B
+ Assessment: Assignment 2
+ Author: Tran Mai Nhung
+ ID: s3879954
+ Created  date: 29/07/2022
+ Last modified: 07/08/2022
+ Acknowledgement:
  - Canvas, CodeWithChris Course
-*/
+ */
 
 import SwiftUI
 
@@ -31,7 +31,7 @@ struct PopularRestaurantsView: View {
                             if (model.restaurants[index].isPopular()) {
                                 NavigateLink(
                                     destinationView: AnyView(RestaurantDetailView(rest: model.restaurants[index])),
-                                   labelView: AnyView(RestaurantCardView(rest: model.restaurants[index], cardWidth: 250, cardHeight: 180, displayType: "popular")),
+                                    labelView: AnyView(RestaurantCardView(rest: model.restaurants[index], cardWidth: 250, cardHeight: 180, displayType: "popular")),
                                     navigateMethod: {model.navigateRestaurant(model.restaurants[index].id)})
                                 .padding()
                                 if (index != model.restaurants.count - 1) {
@@ -43,9 +43,10 @@ struct PopularRestaurantsView: View {
                 }
             }
             else {
+                // Display if no popular restaurant
                 NotFoundView(message: "No Popular Restaurants Now")
             }
         }
-
+        
     }
 }

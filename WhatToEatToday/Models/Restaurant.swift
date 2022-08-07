@@ -25,8 +25,9 @@ struct Restaurant: Decodable, Identifiable {
     var address: String = ""
 
     var rating: Double = 4
-
     var foodList = [Food]()
+    
+    // MARK: - methods
     func coordinateObject() -> CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: coordinates[0], longitude: coordinates[1])
     }
@@ -43,6 +44,7 @@ struct Restaurant: Decodable, Identifiable {
     }
 
     static func testData () -> Restaurant {
+        // for display data in preview
         return Restaurant(
             id: 0,
             name: "Yeebo",
@@ -62,7 +64,10 @@ struct Food: Decodable, Identifiable {
     var description: String = ""
     var category: String = ""
     var price: Int = 0
+    
+    // MARK: - methods
     static func testData() -> Food {
+        // for display data in preview
         return Food(id: 0, name: "Shrimp Dumplings - Har Gow", description: "Shrimp, Flour", category: "Dim Sum", price: 30_000)
     }
 }

@@ -319,13 +319,6 @@
         "description": "Cheese, Tofu, Oil",
         "category": "Hot Pot",
         "price": 20000
-      },
-      {
-        "id": 16,
-        "name": "Cheese Tofu",
-        "description": "Cheese, Tofu, Oil",
-        "category": "Hot Pot",
-        "price": 20000
       }
     ]
   },
@@ -442,7 +435,7 @@
       },
       {
         "id": 7,
-        "name": "Coke",
+        "name": "Coke Light",
         "description": "",
         "category": "Drink",
         "price": 15000
@@ -524,14 +517,14 @@
       {
         "id": 7,
         "name": "Classic Milk Tea",
-        "description": "Loose Assam black tea leaves, Loose Ceylon black tea leaves, Loose Yunnan black tea leaves, Brown Sugar Syrup, Whole Milk, Heavy Cream, Salt",
+        "description": "Loose Assam black tea leaves, Loose Ceylon black tea leaves, Loose Yunnan black tea leaves, Brown Sugar Syrup, Whole Milk, Heavy Cream, Salt, Black Pearls",
         "category": "Milk Tea",
         "price": 42000
       },
       {
         "id": 8,
         "name": "Chocolate Milk Tea",
-        "description": "Chocolate, Loose Assam black tea leaves, Loose Ceylon black tea leaves, Loose Yunnan black tea leaves, Brown Sugar Syrup, Whole Milk, Heavy Cream, Salt",
+        "description": "Chocolate, Cocoa Powder, Loose Assam black tea leaves, Loose Ceylon black tea leaves, Loose Yunnan black tea leaves, Brown Sugar Syrup, Whole Milk, Heavy Cream, Salt",
         "category": "Milk Tea",
         "price": 50000
       },
@@ -598,14 +591,14 @@
       {
         "id": 1,
         "name": "Chuyen Garden",
-        "description": "Oolong Tea Bags, Milk, Sugar, Milk Powder, Egg Cream Powder, Whipping Cream, Lemon Juice, Maple Syrup",
+        "description": "Blueberries, Mint Leaves, Lime, Simple Syrup, Sparkling Water",
         "category": "Mocktail",
         "price": 65000
       },
       {
         "id": 2,
         "name": "Chuyen Sunset",
-        "description": "Oolong Tea Bags, Milk, Sugar, Milk Powder, Egg Cream Powder, Whipping Cream, Lemon Juice, Maple Syrup",
+        "description": "Limes, Watermelon Juice, Orange Juice, Carbonated Soda, Mint Leaves, Sugar",
         "category": "Mocktail",
         "price": 65000
       },

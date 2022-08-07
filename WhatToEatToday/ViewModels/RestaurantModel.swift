@@ -35,8 +35,10 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
     
     // MARK: Current restaurant
     @Published var currentRestaurant: Restaurant?
-    
     var currentRestaurantIndex = 0
+    
+    // MARK: Current Random Restaurant
+    @Published var currentRandomRestaurant: Restaurant?
     
     // MARK: init
     override init() {
@@ -48,6 +50,9 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        
+        // set current random restaurant
+        currentRandomRestaurant = restaurants.randomElement()
     }
     
     // MARK: - Location Methods

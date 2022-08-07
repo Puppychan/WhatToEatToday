@@ -33,11 +33,13 @@ struct UltilityModel {
     }
 
     // MARK: - String
+    // Split string to array when meeting comma
     static func splitStringComma(_ str: String) -> [String] {
         return str.components(separatedBy: ", ")
     }
 
     // MARK: - Calculate distance
+    // calculate distance from user location to a restaurant
     static func calculateDistance(lat1: Double, lon1: Double, lat2: Double, lon2: Double) -> Double {
 
         // Convert degrees to radians.

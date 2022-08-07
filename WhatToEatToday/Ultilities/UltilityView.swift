@@ -27,8 +27,7 @@ extension UINavigationController {
     // Hide on scroll
     override open func viewDidLoad() {
         super.viewDidLoad()
-//        hidesBarsOnSwipe = true
-        // Change navigation back color
+        // Change navigation "back" color
         navigationBar.tintColor = UIColor(named: "RestDetailTitleColor")
     }
 }
@@ -38,8 +37,8 @@ extension UINavigationController {
 extension Color {
     static var gradient: Array<Color> {
         return [
-//            Color(red: 37 / 255, green: 37 / 255, blue: 37 / 255, opacity: 1.0),
-            Color(red: 37 / 255, green: 37 / 255, blue: 37 / 255, opacity: 0.53),
+            Color(red: 37 / 255, green: 37 / 255, blue: 37 / 255, opacity: 0.7),
+            Color(red: 37 / 255, green: 37 / 255, blue: 37 / 255, opacity: 0.6),
             Color(red: 37 / 255, green: 37 / 255, blue: 37 / 255, opacity: 0.5),
             Color(red: 37 / 255, green: 37 / 255, blue: 37 / 255, opacity: 0.3),
             Color(red: 37 / 255, green: 37 / 255, blue: 37 / 255, opacity: 0.2),
@@ -49,4 +48,17 @@ extension Color {
             Color(red: 37 / 255, green: 37 / 255, blue: 37 / 255, opacity: 0)
         ]
     }
+    // For background requiring gradient but not clear
+    static var backgroundGradient: Array<Color> {
+        return [
+            Color(red: 60 / 255, green: 37 / 255, blue: 37 / 255, opacity: 1),
+            Color(red: 60 / 255, green: 37 / 255, blue: 37 / 255, opacity: 0.7),
+            Color(red: 60 / 255, green: 37 / 255, blue: 37 / 255, opacity: 0.6),
+            Color(red: 60 / 255, green: 37 / 255, blue: 37 / 255, opacity: 0.5),
+            Color(red: 60 / 255, green: 37 / 255, blue: 37 / 255, opacity: 0.6),
+            Color(red: 60 / 255, green: 37 / 255, blue: 37 / 255, opacity: 0.7),
+            Color(red: 60 / 255, green: 37 / 255, blue: 37 / 255, opacity: 1)
+        ]
+    }
+
 }
