@@ -6,6 +6,7 @@
 //
 // ref: https://stackoverflow.com/questions/59158476/how-to-have-text-in-shapes-in-swiftui
 //https://blckbirds.com/post/stretchy-header-and-parallax-scrolling-in-swiftui/
+////https://stackoverflow.com/questions/57582653/how-to-create-tappable-url-phone-number-in-swiftui
 
 
 import SwiftUI
@@ -70,23 +71,46 @@ struct RestaurantDetailView: View {
                             .font(.largeTitle)
                             .bold()
                             .foregroundColor(Color("RestDetailTitleColor"))
+                        
+                        
+                        // MARK: open hour and phone
+                        Button(action: {
+                            let formattedString = "tel://" + rest.tel.replacingOccurrences(of: " ", with: "-")
+                            guard let url = URL(string: formattedString) else { return }
+                            UIApplication.shared.open(url)
+                        }) {
+                            HStack {
+                                Image(systemName: "phone.fill")
+                                    .foregroundColor(Color("RestDetailIconColor"))
+                                Text(rest.openHour)
+                                    .foregroundColor(Color("RestDetailAddColor"))
+                                    .font(.headline)
+                                    .lineLimit(1)
+
+                            }
+                        }
 
                         // MARK: restaurant address -> display map
                         HStack(spacing: 3) {
-                            Image(systemName: "mappin.and.ellipse")
-                                .foregroundStyle(Color("RestDetailIconColor"))
-                                .symbolRenderingMode(.hierarchical)
-                                .font(.title3)
-                            Text(rest.address)
-                                .foregroundColor(Color("RestDetailAddColor"))
-                                .font(.headline)
-                                .lineLimit(1)
+                            Button(action: {
+                                model.openAppleMap(endCoordinate: rest.coordinateObject())
+                            }, label: {
+                                HStack {
+                                    Image(systemName: "mappin.and.ellipse")
+                                        .foregroundStyle(Color("RestDetailIconColor"))
+                                        .symbolRenderingMode(.hierarchical)
+                                        .font(.title3)
+                                    Text(rest.address)
+                                        .foregroundColor(Color("RestDetailAddColor"))
+                                        .font(.headline)
+                                        .lineLimit(1)
+                                }
+                            })
 
                             Spacer()
 
                             // MARK: restaurant rating
                             RatingView(rest: rest, fontSize: .title3)
-                            Spacer()
                         }
 
 

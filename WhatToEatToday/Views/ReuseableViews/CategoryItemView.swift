@@ -29,10 +29,3 @@ struct CategoryItemView: View {
         }
     }
 }
-
-struct CategoryItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoryItemView(name: "Bobapop")
-            .environmentObject(RestaurantModel())
-    }
-}

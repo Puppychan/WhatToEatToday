@@ -29,7 +29,9 @@ struct MapView: View {
                     Button(action: {
                         currentRest = rest
                     }, label: {
-                        MapAnnotationView(rest: rest, showMap: {model.openAppleMap(endCoordinate: rest.coordinateObject())})
+                        MapAnnotationView(rest: rest, showMap: {
+                            model.openAppleMap(endCoordinate: rest.coordinateObject())
+                        })
                         })
                         .buttonStyle(PlainButtonStyle())
                 })

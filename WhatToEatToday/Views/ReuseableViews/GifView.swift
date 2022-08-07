@@ -43,9 +43,3 @@ struct GifView: UIViewRepresentable {
         uiView.reload()
     }
 }
-
-struct AnimatedImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        GifView(name: "cat-eat")
-    }
-}
