@@ -41,7 +41,7 @@
       {
         "id": 4,
         "name": "USA Beef",
-        "description": "Using with hot pot",
+        "description": "",
         "category": "Hot Pot",
         "price": 440000
       },
@@ -402,36 +402,268 @@
         "id": 1,
         "name": "Phnom Penh Noodle Soup - Hu Tieu Nam Vang",
         "description": "Pounds pork bones (neck, spine, or leg), dried squid (2 ounces total), dried shrimp, yellow onion, yellow/golden rock sugar (about 1 ounce), salt, pork loin, pork liver, Crispy Caramelized Shallot (reserve the cooking oil for cooking the garlic), Canola or other neutral oil, finely chopped garlic, ground pork, black pepper, dried tapioca stick noodles or dried fettucine- size flat rice noodles (bánh pho), jumbo shrimp, Chinese chives, Chinese celery, bean sprouts (about ⅓ pound), hot Thai or serrano chiles, limes",
-        "category": "Noodle Soup - Hu Tieu",
+        "category": "Hu Tieu",
         "price": 55000
       },
       {
         "id": 2,
         "name": "Special Noodle Soup",
         "description": "Pounds pork bones (neck, spine, or leg), dried squid (2 ounces total), dried shrimp, yellow onion, yellow/golden rock sugar (about 1 ounce), salt, pork loin, pork liver, Crispy Caramelized Shallot (reserve the cooking oil for cooking the garlic), Canola or other neutral oil, finely chopped garlic, ground pork, black pepper, dried tapioca stick noodles or dried fettucine- size flat rice noodles (banh pho), jumbo shrimp, Chinese chives, Chinese celery, bean sprouts (about ⅓ pound), hot Thai or serrano chiles, limes, quail eggs",
-        "category": "Noodle Soup - Hu Tieu",
+        "category": "Hu Tieu",
         "price": 83000
       },
       {
         "id": 3,
         "name": "Dried Noodles",
         "description": "Pounds pork bones (neck, spine, or leg), dried squid (2 ounces total), dried shrimp, yellow onion, yellow/golden rock sugar (about 1 ounce), salt, pork loin, pork liver, Crispy Caramelized Shallot (reserve the cooking oil for cooking the garlic), Canola or other neutral oil, finely chopped garlic, ground pork, black pepper, dried tapioca stick noodles or dried fettucine- size flat rice noodles (bánh pho), jumbo shrimp, Chinese chives, Chinese celery, bean sprouts (about ⅓ pound), hot Thai or serrano chiles, limes, soy sauce, oyster sauce, broth mix",
-        "category": "Noodle Soup - Hu Tieu",
+        "category": "Hu Tieu",
         "price": 55000
       },
       {
         "id": 4,
         "name": "Clear and Egg Noodles",
         "description": "Pounds pork bones (neck, spine, or leg), dried squid (2 ounces total), dried shrimp, yellow onion, yellow/golden rock sugar (about 1 ounce), salt, pork loin, pork liver, Crispy Caramelized Shallot (reserve the cooking oil for cooking the garlic), Canola or other neutral oil, finely chopped garlic, ground pork, black pepper, dried tapioca stick noodles or dried fettucine- size flat rice noodles (bánh pho), jumbo shrimp, Chinese chives, Chinese celery, bean sprouts (about ⅓ pound), hot Thai or serrano chiles, limes",
-        "category": "Noodle Soup - Hu Tieu",
+        "category": "Hu Tieu",
         "price": 55000
       },
       {
         "id": 5,
         "name": "Dried Clear and Egg Noodles",
         "description": "Pounds pork bones (neck, spine, or leg), dried squid (2 ounces total), dried shrimp, yellow onion, yellow/golden rock sugar (about 1 ounce), salt, pork loin, pork liver, Crispy Caramelized Shallot (reserve the cooking oil for cooking the garlic), Canola or other neutral oil, finely chopped garlic, ground pork, black pepper, dried tapioca stick noodles or dried fettucine- size flat rice noodles (bánh pho), egg noodle, jumbo shrimp, Chinese chives, Chinese celery, bean sprouts (about ⅓ pound), hot Thai or serrano chiles, limes, soy sauce, oyster sauce, broth mix",
-        "category": "Noodle Soup - Hu Tieu",
+        "category": "Hu Tieu",
         "price": 55000
+      },
+      {
+        "id": 6,
+        "name": "Sting",
+        "description": "",
+        "category": "Drink",
+        "price": 15000
+      },
+      {
+        "id": 7,
+        "name": "Coke",
+        "description": "",
+        "category": "Drink",
+        "price": 15000
+      },
+      {
+        "id": 8,
+        "name": "7 Up",
+        "description": "",
+        "category": "Drink",
+        "price": 15000
+      },
+      {
+        "id": 9,
+        "name": "Oolong Tea",
+        "description": "",
+        "category": "Drink",
+        "price": 15000
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Three O'clock - Coffee & Tea",
+    "description": "Inspired by one British quote 'AT HALF-PAST THREE, EVERYTHING STOPS FOR TEA', the brand has built the coffee place with the logo having teapot and 3-o'clock clock, which is an interesting place for the youth to stop by, have a chitchat, and enjoy the moment",
+    "tel": "",
+    "coordinates": [
+      10.76804727099479,
+      106.68358705541192
+    ],
+    "address": "462 Nguyễn Thị Minh Khai, Phường 2, Quận 3, Thành phố Hồ Chí Minh 800000, Vietnam",
+    "openHour": "7AM - 22PM",
+    "categories": [
+      "Coffee and Tea"
+    ],
+    "rating": 4,
+    "foodList": [
+      {
+        "id": 1,
+        "name": "Oolong Milk Tea and Grilled Egg Cream",
+        "description": "Oolong Tea Bags, Milk, Sugar, Milk Powder, Egg Cream Powder, Whipping Cream, Lemon Juice, Maple Syrup",
+        "category": "Milk Foam",
+        "price": 64000
+      },
+      {
+        "id": 2,
+        "name": "Houjicha Tea and Cheese",
+        "description": "Houjicha Powder, Sugar, Whipping Cream, Salt, Vanilla Extract, Maple Syrup, Lemon Juice, Milk",
+        "category": "Milk Foam",
+        "price": 64000
+      },
+      {
+        "id": 3,
+        "name": "Muscadine Tea and Cheese",
+        "description": "Muscadine, Grape Tea Leaf, Sugar, Whipping Cream, Salt, Vanilla Extract, Maple Syrup, Lemon Juice, Milk",
+        "category": "Milk Foam",
+        "price": 52000
+      },
+      {
+        "id": 4,
+        "name": "Peach, Orange & Lemongrass Iced Tea",
+        "description": "Lemongrass Stalks, Oolong Tea, Oranges, Peach Syrup, Lemongrass, Peach Jam",
+        "category": "Fresh Tea",
+        "price": 45000
+      },
+      {
+        "id": 5,
+        "name": "Pink Guava Iced Tea",
+        "description": "Fresh Pink Guava, Pomegranate Pearls, Sugar, Black Tea Bags, Mint Leaves, Lemon Juice, Black Salt",
+        "category": "Fresh Tea",
+        "price": 60000
+      },
+      {
+        "id": 6,
+        "name": "Iced Oolong Tea with Chia Seeds",
+        "description": "Oolong Tea Bags, Sugar, Chia Seeds, Mint Leaves",
+        "category": "Fresh Tea",
+        "price": 46000
+      },
+      {
+        "id": 7,
+        "name": "Classic Milk Tea",
+        "description": "Loose Assam black tea leaves, Loose Ceylon black tea leaves, Loose Yunnan black tea leaves, Brown Sugar Syrup, Whole Milk, Heavy Cream, Salt",
+        "category": "Milk Tea",
+        "price": 42000
+      },
+      {
+        "id": 8,
+        "name": "Chocolate Milk Tea",
+        "description": "Chocolate, Loose Assam black tea leaves, Loose Ceylon black tea leaves, Loose Yunnan black tea leaves, Brown Sugar Syrup, Whole Milk, Heavy Cream, Salt",
+        "category": "Milk Tea",
+        "price": 50000
+      },
+      {
+        "id": 9,
+        "name": "Oolong Milk Tea",
+        "description": "Oolong Tea Leafs, Brown Sugar Syrup, Whole Milk, Heavy Cream, Salt",
+        "category": "Milk Tea",
+        "price": 40000
+      },
+      {
+        "id": 10,
+        "name": "Black Pearls",
+        "description": "",
+        "category": "Topping",
+        "price": 10000
+      },
+      {
+        "id": 11,
+        "name": "Flan",
+        "description": "",
+        "category": "Topping",
+        "price": 10000
+      },
+      {
+        "id": 12,
+        "name": "Grass Jelly",
+        "description": "",
+        "category": "Topping",
+        "price": 10000
+      },
+      {
+        "id": 13,
+        "name": "Latte",
+        "description": "Milk, Hot freshly brewed dark roast espresso coffee",
+        "category": "Coffee",
+        "price": 58000
+      },
+      {
+        "id": 14,
+        "name": "Americano",
+        "description": "Finely Ground Coffee Beans",
+        "category": "Coffee",
+        "price": 42000
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Chuyen Rooftop",
+    "description": "If you cannot come to Dalat for chilling or your friends are still to busy for a trip to Dalat, come here and enjoy Dalat atmosphere. This place is also the app author's one of the first dating place.",
+    "tel": "093 127 91 11",
+    "coordinates": [
+      10.795965859622447,
+      106.67842027075312
+    ],
+    "address": "102 Nguyễn Đình Chính, Phường 15, Phú Nhuận, Thành phố Hồ Chí Minh, Vietnam",
+    "openHour": "4PM – 12:30AM",
+    "categories": [
+      "Coffee and Tea"
+    ],
+    "rating": 4,
+    "foodList": [
+      {
+        "id": 1,
+        "name": "Chuyen Garden",
+        "description": "Oolong Tea Bags, Milk, Sugar, Milk Powder, Egg Cream Powder, Whipping Cream, Lemon Juice, Maple Syrup",
+        "category": "Mocktail",
+        "price": 65000
+      },
+      {
+        "id": 2,
+        "name": "Chuyen Sunset",
+        "description": "Oolong Tea Bags, Milk, Sugar, Milk Powder, Egg Cream Powder, Whipping Cream, Lemon Juice, Maple Syrup",
+        "category": "Mocktail",
+        "price": 65000
+      },
+      {
+        "id": 3,
+        "name": "Black Strongbow",
+        "description": "",
+        "category": "Beer",
+        "price": 39000
+      },
+      {
+        "id": 4,
+        "name": "Heineken",
+        "description": "",
+        "category": "Beer",
+        "price": 39000
+      },
+      {
+        "id": 5,
+        "name": "Strawberry Strongbow",
+        "description": "",
+        "category": "Beer",
+        "price": 39000
+      },
+      {
+        "id": 6,
+        "name": "Coconut Pineapple Bundaberg",
+        "description": "",
+        "category": "Non-alcoholic Drink",
+        "price": 79000
+      },
+      {
+        "id": 7,
+        "name": "Guava Bundaberg",
+        "description": "",
+        "category": "Non-alcoholic Drink",
+        "price": 79000
+      },
+      {
+        "id": 8,
+        "name": "0-Degree Heineken",
+        "description": "",
+        "category": "Non-alcoholic Drink",
+        "price": 45000
+      },
+      {
+        "id": 9,
+        "name": "Fried Fries",
+        "description": "Potato, Oil, Vegetable Oil, Salt, Ketchup, Hot Chili Sauce",
+        "category": "Food",
+        "price": 35000
+      },
+      {
+        "id": 10,
+        "name": "Vietnamese Spicy Chicken Floss",
+        "description": "Chicken Breast Fillet, Chicken Broth, Sugar, Pepper Powder, Cashew Powder, Garlic, Shallot, Ginger, Dried Chillies, Lemon Leaves, Lemongrasses, Monosodium Glutamate, Fish Sauce, Curry Powder, Fice-spice Powder",
+        "category": "Food",
+        "price": 35000
       }
     ]
   }

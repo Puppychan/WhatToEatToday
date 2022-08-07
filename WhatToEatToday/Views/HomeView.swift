@@ -9,14 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     @State var isShowingMap = false
-    init() {
-        // for styling navigation bar
-        let navBarAppearance = UINavigationBarAppearance()
-//        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBackground]
-//        navBarAppearance.largeTitleTextAttributes =
-        navBarAppearance.backgroundColor = UIColor(Color("RestDetailTitleColor"))
-        
-    }
 
     @EnvironmentObject var model: RestaurantModel
     @State var searchQuery = ""
@@ -108,8 +100,9 @@ struct HomeView: View {
                                 Text("Are you looking for")
                                     .foregroundColor(.black)
                                 Text(rest.name)
-                                    .foregroundColor(Color("RestDetailTitleColor"))
                                     .bold()
+                                    .lineLimit(1)
+                                    .foregroundColor(Color("RestDetailTitleColor"))
                                 
                             }
                                 .searchCompletion(rest.name)

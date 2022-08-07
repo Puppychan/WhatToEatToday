@@ -25,7 +25,7 @@ struct Restaurant: Decodable, Identifiable {
         return CLLocationCoordinate2D(latitude: coordinates[0], longitude: coordinates[1])
     }
     func isPopular() -> Bool {
-        return rating > 3.5
+        return rating >= 4.5
     }
     func findPriceRange() -> String {
         let minPrice = foodList.map { $0.price }.min()

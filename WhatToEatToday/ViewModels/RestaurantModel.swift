@@ -121,6 +121,10 @@ class RestaurantModel : NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     // MARK: - Restaurant
+    // MARK: distance from current position to restaurant
+    func calculateDistanceRest(_ restaurant: Restaurant) -> Double {
+        return UltilityModel.calculateDistance(lat1: currentUserCoordinate?.latitude ?? 0.0, lon1: currentUserCoordinate?.longitude ?? 0.0, lat2: restaurant.coordinates[0], lon2: restaurant.coordinates[1])
+    }
     // MARK: Restaurant Navigation Method
     func navigateRestaurant(_ restId: Int) {
         // find the index for the restaurant id

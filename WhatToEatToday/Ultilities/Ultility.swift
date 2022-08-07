@@ -1,8 +1,8 @@
 //
-//  Shapes.swift
+//  Ultility.swift
 //  WhatToEatToday
 //
-//  Created by Nhung Tran on 28/07/2022.
+//  Created by Nhung Tran on 07/08/2022.
 //
 
 import Foundation
@@ -28,3 +28,4 @@ struct ArrowShape: Shape {
         return path
     }
 }
+

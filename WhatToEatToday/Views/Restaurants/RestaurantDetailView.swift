@@ -34,7 +34,7 @@ struct RestaurantDetailView: View {
                                 Image("\(rest.name)-bck")
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                
+
                                 // move image up
                                 .offset(y: geo.frame(in: .global).minY / 9)
                                     .clipped()
@@ -46,9 +46,9 @@ struct RestaurantDetailView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .scaleEffect(1 + geo.frame(in: .global).minY / 500) // change scale of image
-                                    .clipped()
-                                    // move image down
-                                    .offset(y: -geo.frame(in: .global).minY)
+                                .clipped()
+                                // move image down
+                                .offset(y: -geo.frame(in: .global).minY)
                                     .animation(.easeInOut.delay(2), value: imageScale)
                                     .background(Color("RestDetailImageBckColor").opacity(0.4))
                             }

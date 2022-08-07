@@ -34,16 +34,16 @@ struct FoodListView: View {
                     ForEach(rest.foodList) { food in
                         if (food.category == categories[index]) {
                             Button(action: {
-                                self.isFoodDetailShowing = true
+                                if (food.description != "") {
+                                    // only display if food is not drink (drink have nothing to show in details)
+                                    self.isFoodDetailShowing = true
+                                }
                                 model.navigateFood(food.id, rest.id)
                             }, label: {
                                     FoodCardView(food: food, rest: rest)
                                 })
                                 .sheet(isPresented: $isFoodDetailShowing, content: {
-                                    // only display if food is not drink (drink have nothing to show in details)
-                                    if (food.category != "Drink") {
-                                        FoodDetailView(food: model.currentFood ?? Food(), rest: rest)
-                                    }
+                                    FoodDetailView(food: model.currentFood ?? Food(), rest: rest, isFoodDetailShowing: $isFoodDetailShowing)
                             })
                             // for user style not button auto style
                             .buttonStyle(PlainButtonStyle())

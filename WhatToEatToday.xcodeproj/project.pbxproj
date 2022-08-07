@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D304AFB289CBD4B00B269ED /* UltilityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D304AFA289CBD4B00B269ED /* UltilityModel.swift */; };
 		3D304AFD289CBFB700B269ED /* UltilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D304AFC289CBFB700B269ED /* UltilityView.swift */; };
+		3D304B03289ED8A300B269ED /* Ultility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D304B02289ED8A300B269ED /* Ultility.swift */; };
+		3D344BA9289F5E4300C270DB /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D344BA8289F5E4300C270DB /* IngredientsView.swift */; };
 		3D42C21428961015005BA233 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C21328961015005BA233 /* CategoryItemView.swift */; };
 		3D42C216289614F1005BA233 /* SideAppModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C215289614F1005BA233 /* SideAppModels.swift */; };
 		3D42C2182896D680005BA233 /* NotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D42C2172896D680005BA233 /* NotFoundView.swift */; };
@@ -35,7 +37,6 @@
 		3D85B3E4288FF57D001BF2AF /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85B3E3288FF57D001BF2AF /* RestaurantDetailView.swift */; };
 		3D85B3EA289144FA001BF2AF /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D85B3E9289144FA001BF2AF /* restaurants.json */; };
 		3D85B3EC28917B7D001BF2AF /* FoodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85B3EB28917B7D001BF2AF /* FoodCardView.swift */; };
-		3D85B3EE2892AADD001BF2AF /* Assistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85B3ED2892AADD001BF2AF /* Assistant.swift */; };
 		3DC2FC972886E18E003750D3 /* WhatToEatTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2FC962886E18E003750D3 /* WhatToEatTodayApp.swift */; };
 		3DC2FC9B2886E18F003750D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DC2FC9A2886E18F003750D3 /* Assets.xcassets */; };
 		3DC2FC9E2886E18F003750D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DC2FC9D2886E18F003750D3 /* Preview Assets.xcassets */; };
@@ -45,6 +46,8 @@
 /* Begin PBXFileReference section */
 		3D304AFA289CBD4B00B269ED /* UltilityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltilityModel.swift; sourceTree = "<group>"; };
 		3D304AFC289CBFB700B269ED /* UltilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltilityView.swift; sourceTree = "<group>"; };
+		3D304B02289ED8A300B269ED /* Ultility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ultility.swift; sourceTree = "<group>"; };
+		3D344BA8289F5E4300C270DB /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
 		3D42C21328961015005BA233 /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
 		3D42C215289614F1005BA233 /* SideAppModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAppModels.swift; sourceTree = "<group>"; };
 		3D42C2172896D680005BA233 /* NotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundView.swift; sourceTree = "<group>"; };
@@ -72,7 +75,6 @@
 		3D85B3E3288FF57D001BF2AF /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
 		3D85B3E9289144FA001BF2AF /* restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
 		3D85B3EB28917B7D001BF2AF /* FoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardView.swift; sourceTree = "<group>"; };
-		3D85B3ED2892AADD001BF2AF /* Assistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assistant.swift; sourceTree = "<group>"; };
 		3DC2FC932886E18E003750D3 /* WhatToEatToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToEatToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC2FC962886E18E003750D3 /* WhatToEatTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToEatTodayApp.swift; sourceTree = "<group>"; };
 		3DC2FC9A2886E18F003750D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				3D304AFC289CBFB700B269ED /* UltilityView.swift */,
 				3D304AFA289CBD4B00B269ED /* UltilityModel.swift */,
+				3D304B02289ED8A300B269ED /* Ultility.swift */,
 			);
 			path = Ultilities;
 			sourceTree = "<group>";
@@ -128,6 +131,16 @@
 				3D837144289410650067C946 /* LaunchContentView.swift */,
 			);
 			path = LaunchViews;
+			sourceTree = "<group>";
+		};
+		3D344BA7289F595C00C270DB /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3D42C26028999B6D005BA233 /* MapView.swift */,
+				3D42C25E28999B3F005BA233 /* MapAnnotationView.swift */,
+				3D42C22D28992446005BA233 /* MapDisplayButton.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		3D4705D8288DA1F600502DD1 /* Resources */ = {
@@ -145,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				3D4705DA288E4C0400502DD1 /* Restaurant.swift */,
-				3D85B3ED2892AADD001BF2AF /* Assistant.swift */,
 				3D42C215289614F1005BA233 /* SideAppModels.swift */,
 			);
 			path = Models;
@@ -162,15 +174,14 @@
 		3D83712F2893B9BB0067C946 /* ReuseableViews */ = {
 			isa = PBXGroup;
 			children = (
-				3D42C26028999B6D005BA233 /* MapView.swift */,
-				3D42C25E28999B3F005BA233 /* MapAnnotationView.swift */,
+				3D344BA7289F595C00C270DB /* Map */,
 				3D837118289389830067C946 /* GifView.swift */,
 				3D42C2192896D931005BA233 /* NavigateLink.swift */,
 				3D8371302893B9CC0067C946 /* RatingView.swift */,
 				3D83713C2893F6E40067C946 /* AppNameView.swift */,
 				3D42C21328961015005BA233 /* CategoryItemView.swift */,
 				3D42C2172896D680005BA233 /* NotFoundView.swift */,
-				3D42C22D28992446005BA233 /* MapDisplayButton.swift */,
+				3D344BA8289F5E4300C270DB /* IngredientsView.swift */,
 			);
 			path = ReuseableViews;
 			sourceTree = "<group>";
@@ -311,7 +322,6 @@
 			files = (
 				3D85B3EC28917B7D001BF2AF /* FoodCardView.swift in Sources */,
 				3DC2FC972886E18E003750D3 /* WhatToEatTodayApp.swift in Sources */,
-				3D85B3EE2892AADD001BF2AF /* Assistant.swift in Sources */,
 				3D42C216289614F1005BA233 /* SideAppModels.swift in Sources */,
 				3D42C2632899C8F9005BA233 /* MapListView.swift in Sources */,
 				3D42C22E28992446005BA233 /* MapDisplayButton.swift in Sources */,
@@ -324,8 +334,10 @@
 				3D85B3DC288FB0C8001BF2AF /* RestaurantModel.swift in Sources */,
 				3D4705DB288E4C0400502DD1 /* Restaurant.swift in Sources */,
 				3D42C21428961015005BA233 /* CategoryItemView.swift in Sources */,
+				3D344BA9289F5E4300C270DB /* IngredientsView.swift in Sources */,
 				3D85B3E4288FF57D001BF2AF /* RestaurantDetailView.swift in Sources */,
 				3D83713D2893F6E40067C946 /* AppNameView.swift in Sources */,
+				3D304B03289ED8A300B269ED /* Ultility.swift in Sources */,
 				3D8371382893D3DF0067C946 /* FoodListView.swift in Sources */,
 				3D85B3DE288FE20E001BF2AF /* RestaurantCardView.swift in Sources */,
 				3D83712A2893B8580067C946 /* PopularRestaurantsView.swift in Sources */,

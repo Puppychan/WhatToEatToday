@@ -47,13 +47,7 @@ struct FoodCardView: View {
                 Spacer()
 
                 // image
-                Image(food.category == "Drink" ? food.name : "\(rest.name)-\(food.name)")
-//                    .resizable()
-//                    .scaledToFit()
-//                    .brightness(-0.03)
-//                    .frame(width: 140, height: 140)
-//                    .clipShape(Circle())
-//                    .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.8), radius: 5, x: 3, y: 3)
+                Image(food.description == "" ? food.name : "\(rest.name)-\(food.name)")
                 .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: imgWidth, height: cardHeight)
