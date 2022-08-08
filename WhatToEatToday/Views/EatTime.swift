@@ -14,7 +14,7 @@
 import SwiftUI
 
 @main
-struct WhatToEatTodayApp: App {
+struct EatTime: App {
     var body: some Scene {
         WindowGroup {
             LaunchView()
