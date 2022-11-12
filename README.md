@@ -26,7 +26,8 @@ A gorgeous and expertly restaurant discovery app that provides client various of
 
 <!-- TechStack -->
 ### :space_invader: Tech Stack
--    The whole app is written by Swift language.
+-   The whole app is written by Swift language.
+-   SwiftUI is for the app's design
 
 <!-- Features -->
 ### :dart: Features
@@ -56,7 +57,6 @@ A gorgeous and expertly restaurant discovery app that provides client various of
 ### :bangbang: Prerequisites
 
 -    The project uses Xcode as an IDE to run the project
--    Firebase account
 
 <!-- Installation -->
 ### 🔧 installation
