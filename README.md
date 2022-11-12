@@ -37,8 +37,7 @@ A gorgeous and expertly restaurant discovery app that provides client various of
 -   Display list of nearby restaurants
 -   Display list of restaurants
 -   Display list of restaurants' location
--   Display list of recipes of a restaurant
--   Display recipe of a restaurant
+-   Display list of food of a restaurant and recipe of each food
 -   Search restaurant by name
 -   Choose randomly where to eat
 -   Display route from current location to the restaurant
